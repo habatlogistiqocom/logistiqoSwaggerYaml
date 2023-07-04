@@ -5,31 +5,31 @@ info:
   description: >-
   
     
+        - Go to [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/rifatujkaj/LogistiqoSwagger/main/logistiqoSwaggerYaml.yaml)
   
   
-  
-    An API, or Application Programming Interface, is a set of protocols,
-    routines, and tools that enable different software applications to
-    communicate and exchange data with each other. It defines how software
-    components should interact and helps to simplify software development by
-    abstracting the underlying implementation. APIs are essential for building
-    complex and interconnected software systems.
-    
-     ## Contact Us
-
-
-    If you have problems or questions, please read the following information:
-
-
-    - [FAQ](https://www.logistiqo.com/faq/)
-
-    - [Contact us](https://www.logistiqo.com/contact.php)
-
-
-    To stay informed about the latest developments, you can
-
-
-    - Follow us on [Twitter](https://twitter.com/logistiqo/),
+         An API, or Application Programming Interface, is a set of protocols,
+          routines, and tools that enable different software applications to
+          communicate and exchange data with each other. It defines how software
+          components should interact and helps to simplify software development by
+          abstracting the underlying implementation. APIs are essential for building
+          complex and interconnected software systems.
+          
+           ## Contact Us
+      
+      
+          If you have problems or questions, please read the following information:
+      
+      
+          - [FAQ](https://www.logistiqo.com/faq/)
+      
+          - [Contact us](https://www.logistiqo.com/contact.php)
+      
+      
+          To stay informed about the latest developments, you can
+      
+      
+          - Follow us on [Twitter](https://twitter.com/logistiqo/),
 
     
   contact:
@@ -46,9 +46,6 @@ paths:
       
           # Shipment
 
-
-            Shipment description shipment description shipment description shipment description shipment description shipment  description shipment description shipment description shipment description shipment description shipment  description shipment description shipment description. 
-     
        
       tags:
         - Shipment Table
@@ -161,8 +158,6 @@ paths:
       
          # Shipment
 
-
-         Shipment description shipment description shipment description shipment description shipment description shipment description shipment description shipment description shipment description shipment description shipment description shipment description shipment description. 
      
           
           
@@ -193,8 +188,6 @@ paths:
      
          # Status
 
-
-         Status description status description status description status description status description status description status description status description status description status description status description status description status description. 
      
           
          
@@ -219,9 +212,7 @@ paths:
        description: >
          
          # Companies
-
-
-           Companies description companies description companies description companies description companiesdescription companies description companies description companies description companies description companies description companies description companies description companies description. 
+         
      
           
        tags:
@@ -246,8 +237,6 @@ paths:
        
            # Warehouse
   
-  
-             Warehouse description warehouse description warehouse description warehouse description warehouse warehouse description warehouse description warehouse description warehouse description warehouse description warehouse description warehouse description warehouse description. 
        
             
        tags:
@@ -562,7 +551,7 @@ components:
             If you specifically want to create shipments without a manifest, please keep the field at its default value "false". However, if you require a manifest that includes all shipments, please set the field to "true".
         reference:
           type: string
-          example: 023672541541451
+          example: 023672
           description: >-
             This field can contain either a unique random string or a unique ID, which is used to prevent the generation of duplicate manifests
         description:
@@ -588,13 +577,13 @@ components:
           example: 12.06.2023
           default: current date
           description: >-
-            Please indicate the desired start date in the format dd.MM.yyyy HH:mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.
+            Please indicate the desired start date in the format dd.MM.yyyy HH.mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.
         dateto:
           type: string
-          example: 12.06.2023
+          example: dd.MM.yyyy HH.mm or dd.MM.yyyy
           default: date
           description: >-
-            Please provide the desired completion date in the format dd.MM.yyyy HH:mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.
+            Please provide the desired completion date in the format dd.MM.yyyy HH.mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.
         depot:
           type: string
           example: HUB01
@@ -1266,3 +1255,4 @@ components:
 security:
   - BasicAuth: []
   - ApiKeyAuth: []
+
