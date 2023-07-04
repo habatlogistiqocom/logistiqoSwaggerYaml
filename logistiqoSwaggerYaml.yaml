@@ -7,7 +7,6 @@ info:
     
         - Go to [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/habatlogistiqocom/logistiqoSwaggerYaml/main/logistiqoSwaggerYaml.yaml)
   
-             test3
          An API, or Application Programming Interface, is a set of protocols,
           routines, and tools that enable different software applications to
           communicate and exchange data with each other. It defines how software
@@ -558,10 +557,11 @@ components:
           type: string
           description: >-
             This field can contain e free text describing the manifest
-        hawb:
+        mrn:
           type: string
+          example: 22AT100000TV0D2MD6
           description: >-
-            If this manifest represents a House Air Waybill, please enter the House Waybill number in the field using a free format.
+            If this manifest represents a Master Reference Number, the field should contain a valid Master Reference Number.
         mawb:
           type: string
           example: 180-39408331
@@ -569,21 +569,21 @@ components:
             If this manifest represents a Master Air Waybill, the field should contain a valid Master Air Waybill number in the format 123-12345678.
         airline:
           type: string
-          example: Korean Air Lines
+          example: 180 Korean Air Lines
           description: >-
             If this manifest represents a Master Air Waybill, the field should contain the name of the first carrier.
         date:
           type: string
-          example: 12.06.2023
+          example: 12.06.2023 12:00
           default: current date
           description: >-
-            Please indicate the desired start date in the format dd.MM.yyyy HH.mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.
+            Please indicate the desired start date in the format dd.MM.yyyy HH:mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.
         dateto:
           type: string
-          example: dd.MM.yyyy HH.mm or dd.MM.yyyy
+          example: 12.06.2023 16:00
           default: date
           description: >-
-            Please provide the desired completion date in the format dd.MM.yyyy HH.mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.
+            Please provide the desired completion date in the format dd.MM.yyyy HH:mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.
         depot:
           type: string
           example: HUB01
@@ -599,13 +599,14 @@ components:
             If this manifest represents a Contract of Carriage, please enter the Logistiqo-specified company code of the subcontractor responsible for carrying out the transportation.
         action:
           type: string
-          example: SCAN_IN
+          example: ''
           description: >-
             This field is solely utilized when the manifest includes warehouse issues, warehouse receipts, or relocation shipments. In such scenarios, the acceptable values are limited to SCAN_IN, SCAN_OUT, and SCAN_RELOCATE.
         flightNo:
           type: string
           example: KE946
-          description: If this manifest represents a Master Air Waybill, please enter the Flight Number in the corresponding field.
+          description: >-
+            If this manifest represents a Master Air Waybill, please enter the Flight Number in the corresponding field.
         shipper:
           type: object
           allOf:
@@ -649,6 +650,10 @@ components:
         internalReference:
           type: string
           example: ''
+        hawb:
+          type: string
+          description: >-
+            If this shipment is linked with a House Air Waybill, please enter the House Waybill number in the field using a free format.
         shipmentType:
           type: string
           example: DIRECT
