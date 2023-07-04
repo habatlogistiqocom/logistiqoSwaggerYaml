@@ -35,7 +35,7 @@ info:
     email: info@logistiqo.com
     url: https://www.logistiqo.com/
 servers:
-  - url: https://demo.logistiqo.com
+  - url: https://your-subdomain.logistiqo.com
 paths:
   /logistiqo/api/shipment-list:
     get:
