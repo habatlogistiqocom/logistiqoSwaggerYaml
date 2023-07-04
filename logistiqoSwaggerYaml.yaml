@@ -562,7 +562,7 @@ components:
             If you specifically want to create shipments without a manifest, please keep the field at its default value "false". However, if you require a manifest that includes all shipments, please set the field to "true".
         reference:
           type: string
-          example: 023672
+          example: 023672541541451
           description: >-
             This field can contain either a unique random string or a unique ID, which is used to prevent the generation of duplicate manifests
         description:
@@ -588,13 +588,13 @@ components:
           example: 12.06.2023
           default: current date
           description: >-
-            Please indicate the desired start date in the format dd.MM.yyyy HH.mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.
+            Please indicate the desired start date in the format dd.MM.yyyy HH:mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.
         dateto:
           type: string
-          example: dd.MM.yyyy HH.mm or dd.MM.yyyy
+          example: 12.06.2023
           default: date
           description: >-
-            Please provide the desired completion date in the format dd.MM.yyyy HH.mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.
+            Please provide the desired completion date in the format dd.MM.yyyy HH:mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.
         depot:
           type: string
           example: HUB01
