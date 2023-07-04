@@ -7,7 +7,7 @@ info:
     
         - Go to [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/habatlogistiqocom/logistiqoSwaggerYaml/main/logistiqoSwaggerYaml.yaml)
   
-  
+             test test
          An API, or Application Programming Interface, is a set of protocols,
           routines, and tools that enable different software applications to
           communicate and exchange data with each other. It defines how software
@@ -892,7 +892,7 @@ components:
           description: Provide a lot number for the notified goods item.
         unit:
           type: string
-          example: Europalette, Euro pallet, StÃ¼ck, Colli, Box
+          example: Europalette, Euro pallet, Stück, Colli, Box
           description: >-
             Enter the name of the packaging used for the for the notified goods item. If the unit does not exist in the Logistiqo system, it will be created.
         pieces:
@@ -986,7 +986,7 @@ components:
             This field exclusively pertains to warehouse monitoring purposes.
         unit:
           type: string
-          example: Europalette, Euro pallet, StÃ¼ck, Colli, Box
+          example: Europalette, Euro pallet, Stück, Colli, Box
           description: >-
             Enter the name of the packaging used for the goods.If the unit does not exist in the Logistiqo system, it will be created.
         pieces:
