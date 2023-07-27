@@ -112,7 +112,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ShipmentListResponse'
-  /logistiqo/rest/manifest/json:
+  /logistiqo/rest/manifest/add/json:
     post:
       summary: postManifestEndpoint
       operationId: postManifest
@@ -160,7 +160,7 @@ paths:
           description: No valid JSON Body in your request
         '500':
           description: Internal server error
-  /shipments/{id}:
+  /logistiqo/rest/shipment/get/{id}:
     get:
       summary: Get a shipment by ID
       operationId: getShipment
@@ -189,7 +189,7 @@ paths:
                 $ref: '#/components/schemas/Shipment'
         '404':
           description: Not Found
-  /status:
+  /logistiqo/rest/status/add/json:
     post:
        summary: postStatusEndpoint
        operationId: postStatus
@@ -198,8 +198,6 @@ paths:
      
          # Status
 
-     
-          
          
        tags:
         - Status
@@ -211,9 +209,17 @@ paths:
               $ref: '#/components/schemas/Status'
        responses:
         '200':
-          description: Successfully added status.
+          description: The status successfully added
         '400':
-          description: Invalid input.
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '406':
+          description: No valid JSON Body in your request
+        '500':
+          description: Internal server error
+        'default': 
+          description: The response includes a response status object containing a 'Message' and a 'Status' wherever applicable
           
   /companies:
    post:
@@ -1178,17 +1184,17 @@ components:
           type: integer
           example: 1
           description: :>-
-            Only used by Logtistiqo
+            Only for internal use by Logtistiqo
         status:
           type: string
           example: 'POD'
           description: :>-
             Possible values NONASSIGNED, ASSIGNED, STOPOVER, ACCEPTED, ATGATECOLLECT, COLLECTED, DEPOT, DELIVERY, ATGATEDELIVERY, DELIVERED, POD, QUOTE, QUOTEACCEPTED, CANCELED, PROBLEM, XRAY, LABELED, PARTIN, PARTOUT
-        statusDescription:
-          type: string
-          example: 'At Gate Pickup'
+        idProblemType:
+          type: integer
+          example: 2
           description: :>-
-            Translated status
+            This optional field allows users to set a problem status from the problem type table, providing flexibility and customization within the Logistiqo system. Users have the freedom to define their own problem types. To create and find the available IDs, you can refer to the 'Settings/Shipment/Problem Type' function in Logistiqo."
         description:
           type: string
           example: 'Freight papers are missing'
@@ -1207,10 +1213,14 @@ components:
             Time of the status change, Use Dateformat 'dd.MM.yyyy HH:mm'
         lat:
           type: number
+          format: double
+          example: 47.7968048
           minimum: -90
           maximum: 90
         lng:
           type: number
+          format: double
+          example: 11,973085
           minimum: -180
           maximum: 180
     Barcode:
