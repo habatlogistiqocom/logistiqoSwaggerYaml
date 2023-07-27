@@ -216,6 +216,8 @@ paths:
           description: Unauthorized
         '406':
           description: No valid JSON Body in your request
+        '422':
+          description: Unprocessable Content
         '500':
           description: Internal server error
         'default': 
