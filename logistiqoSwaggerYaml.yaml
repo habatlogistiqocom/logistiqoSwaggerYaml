@@ -1194,7 +1194,12 @@ components:
           type: integer
           example: 2
           description: :>-
-            This optional field allows users to set a problem status from the problem type table, providing flexibility and customization within the Logistiqo system. Users have the freedom to define their own problem types. To create and find the available IDs, you can refer to the 'Settings/Shipment/Problem Type' function in Logistiqo."
+            This optional field allows users to set a problem status from the problem type table, providing flexibility and customization within the Logistiqo system. Users have the freedom to define their own problem types. To create and find the available IDs, you can refer to the 'Settings/Shipment/Problem Type' function in Logistiqo.
+        statusDescription:
+          type: string
+          example: Abholung
+          description: :>-
+            A translated status, this field is not used by add status
         description:
           type: string
           example: 'Freight papers are missing'
