@@ -1208,7 +1208,7 @@ components:
             Name, Email or Phone number of the user who changed the status
         timeStamp:
           type: string
-          example: '23-03-2023 19:01'
+          example: '23.03.2023 19:01'
           description: :>-
             Time of the status change, Use Dateformat 'dd.MM.yyyy HH:mm'
         lat:
