@@ -1293,6 +1293,28 @@ components:
             Common Errors
             - Missing Fields, Some required fields were not provided in the API request, which caused the import process to fail.
             - Incorrect Fields, The data provided for certain fields in the API request was not in the expected format or did not meet the validation requirements, resulting in an error during import.
+    UnloadingNotes:
+      type: object
+      properties:
+        mrn:
+          type: string
+          example: '23AT320000TVF8SXX6'
+          description: :>-
+              MRN for the manifest for which the unload notes were requested.
+        loginID:
+          type: integer
+          example: 263532
+          description: :>-
+              LoginID (AnmeldeId) for the manifest for which the unload notes were requested.
+        status:
+          type: integer
+          example: 0
+          description: :>-
+              Status code 
+        errorText:
+          type: string
+          description: :>-
+              Error text 
 
   securitySchemes:
     ApiKeyAuth:
