@@ -270,6 +270,29 @@ paths:
           description: Successfully added barcode.
         '400':
           description: Invalid input.
+          
+  /invoices:
+    get:
+        summary: GetInvoicesEndpoint
+        operationId: getInvoices
+        description: > 
+        
+            #Invoice
+            
+            
+            
+        tags:
+         - Invoices
+        responses:
+          '200':
+            description: List of Invoices
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Invoice'
+                    
 components:
   schemas:
     ShipmentListResponse:
@@ -806,6 +829,87 @@ components:
         - customerReference
         - details
         - goodss
+    DirectDetails:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The unique identifier for the DirectDetail.
+        code:
+          type: string
+          description: The code for the DirectDetail.
+        name:
+          type: string
+          description: The name of the DirectDetail.
+        description:
+          type: string
+          description: A description of the DirectDetail.
+        price:
+          type: number
+          format: double
+          description: The price of the DirectDetail.
+        unit:
+          type: string
+          description: The unit of measurement for the DirectDetail.
+        quantity:
+          type: integer
+          description: The quantity of the DirectDetail.
+        amount:
+          type: number
+          format: double
+          description: The total amount for the DirectDetail.
+        deliveryDate:
+          type: string
+          description: The delivery date for the DirectDetail.
+    
+    ContractDetails:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The unique identifier for the ContractDetail.
+        id_ContractDetail:
+          type: integer
+          description: The unique identifier for the associated ContractDetail.
+        id_RevenueAccount:
+          type: integer
+          description: The unique identifier for the associated RevenueAccount.
+        id_VatRateRevenue:
+          type: integer
+          description: The unique identifier for the associated VatRateRevenue.
+        startDate:
+          type: string
+          description: The start date of the ContractDetail.
+        endDate:
+          type: string
+          description: The end date of the ContractDetail.
+        id_Invoice:
+          type: integer
+          description: The unique identifier for the associated Invoice.
+        position:
+          type: integer
+          description: The position of the ContractDetail.
+    
+    ShipmentDetails:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The unique identifier for the TransportManifest.
+        id_Invoice:
+          type: integer
+          description: The unique identifier for the associated Invoice.
+        id_TransportManifest:
+          type: integer
+          description: The unique identifier for the associated TransportManifest.
+        position:
+          type: integer
+          description: The position of the TransportManifest.
+        description:
+          type: string
+          description: The description of the TransportManifest.
+        
+              
     Detail:
       type: object
       properties:
@@ -1315,7 +1419,98 @@ components:
           type: string
           description: :>-
               Error text 
-
+    Invoice:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int
+        idInvoiceType:
+          type: integer
+          format: int
+        number:
+          type: string
+        invoiceDate:
+          type: string
+          format: date-time
+        postingDate:
+          type: string
+          format: date-time
+        invoiceText:
+          type: string
+        companyNote:
+          type: string
+        period:
+          type: string
+        dueDate:
+          type: string
+          format: date-time
+        invoiceAmount:
+          type: number
+          format: double
+        vatAmount:
+          type: number
+          format: double
+        printed:
+          type: boolean
+        mailed:
+          type: boolean
+        paid:
+          type: boolean
+        paidOn:
+          type: string
+          format: date-time
+        taxExempt:
+          type: boolean
+        taxCase:
+          type: integer
+          format: int32
+        overrideTaxCase:
+          type: boolean
+        canceled:
+          type: boolean
+        creditAllocation:
+          type: boolean
+        correctiveInvoice:
+          type: boolean
+        noDiscount:
+          type: boolean
+        allocatedCreditNote:
+          type: string
+        createdOn:
+          type: string
+          format: date-time
+        createdBy:
+          type: string
+        modifiedOn:
+          type: string
+          format: date-time
+        modifiedBy:
+          type: string
+        contactPerson:
+          type: object
+          allOf:
+            - $ref: '#/components/schemas/AddressObject'
+        customer:
+          type: object
+          allOf: 
+            - $ref: '#/components/schemas/CompanyObject'
+        invoiceReceiver:
+          type: object
+          allOf:
+            - $ref: '#/components/schemas/CompanyObject'
+        direstDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/DirectDetails'
+        ContractDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContractDetails'
+        ShipmentDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/ShipmentDetails'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
