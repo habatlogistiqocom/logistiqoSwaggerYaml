@@ -37,9 +37,9 @@ info:
 servers:
   - url: https://your-subdomain.logistiqo.com
 paths:
-  /logistiqo/api/shipment-list:
+  /logistiqo/rest/api/v-1/shipment-list:
     get:
-      summary: GetShipmentListEndpoint
+      summary: Retrieve shipment information from this endpoint. You can filter the shipments based on various criteria such as shipment number, customer reference, creation date, modification date, and status modification date.
       operationId: getShipmentList
       description: >
       
@@ -112,9 +112,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ShipmentListResponse'
-  /logistiqo/rest/manifest/add/json:
+  /logistiqo/rest/api/v-1/manifest/add:
     post:
-      summary: postManifestEndpoint
+      summary: This API allows you to create manifests, which can export unplanned, planned, and optimized tours or bundles of shipments. 
       operationId: postManifest
       description: >
       
@@ -160,9 +160,9 @@ paths:
           description: No valid JSON Body in your request
         '500':
           description: Internal server error
-  /logistiqo/rest/shipment/get/{id}:
+  /logistiqo/rest/api/v-1/shipment/{id}:
     get:
-      summary: Get a shipment by ID
+      summary: This API allows you to retrieve a shipment by its unique ID. 
       operationId: getShipment
       description: >
       
@@ -189,9 +189,9 @@ paths:
                 $ref: '#/components/schemas/Shipment'
         '404':
           description: Not Found
-  /logistiqo/rest/status/add/json:
+  /logistiqo/rest/api/v-1/status/add:
     post:
-       summary: postStatusEndpoint
+       summary: This API allows you to add a status. You need to provide a valid JSON request body with the status information.
        operationId: postStatus
        description: >
         
@@ -222,9 +222,9 @@ paths:
           description: Internal server error
         'default': 
           description: The response includes a response status object containing a 'Message' and a 'Status' wherever applicable
-  /companies:
+  /logistiqo/rest/api/v-1/company:
    post:
-       summary: postCompaniesEndpoint
+       summary: This API allows you to add companies. You need to provide a valid JSON request body with the company information.
        operationId: postCompanies
        description: >
          
@@ -245,9 +245,9 @@ paths:
           description: Successfully added Companies.
         '400':
           description: Invalid input.
-  /scanIn:
+  /logistiqo/rest/api/v-1/scanIn:
     post:
-       summary: postWarehouseEndpoint
+       summary: This API allows you to add barcode scans for the warehouse. You need to provide a valid JSON request body with the barcode information.
        operationId: postWarehouse
        description: >
        
@@ -268,10 +268,10 @@ paths:
           description: Successfully added barcode.
         '400':
           description: Invalid input.
-  /invoices:
+  /logistiqo/rest/api/v-1/invoice:
     get:
-        summary: GetInvoicesEndpoint
-        operationId: getInvoices
+        summary: From this endpoint, you can retrieve a list of invoices. The endpoint allows you to filter invoices based on different criteria such as month, year, date, or invoice number.
+        operationId: getInvoice
         description: > 
         
             #Invoice
@@ -279,7 +279,7 @@ paths:
             
             
         tags:
-         - Invoices
+         - Invoice
         parameters:
           - name: month
             in: query
@@ -323,10 +323,9 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/Invoice'
-                    
-  /contract:
+  /logistiqo/rest/api/v-1/contract:
     get:
-        summary: GetContractEndpoint
+        summary: Retrieve a Logistiqo contract from this endpoint. The response will be an array of JSON objects representing the contracts.
         operationId: getContract
         description: >
         
@@ -499,6 +498,11 @@ components:
             type: string
             description: >-
               If you have the address number available in Logistiqo, please enter it in this field. In that case, no other address fields are required. However, if the address number not known or the address is new, please make sure to fill out all the other necessary address fields
+          idAddress: 
+            type: integer
+            default: 0
+            description: >-
+              This field contains the ID of the address within the Logistiqo Application. It is exclusively utilized by Logistiqo's internal functions.
           city:
             type: string
             example: London
@@ -507,6 +511,9 @@ components:
             example: GB
             description: >-
               Please enter the two-letter country code according to the ISO  3166-1 alpha-2 standard. These codes are internationally recognized and defined by the International Organization for Standardization as part of the ISO 3166 standard.
+          email:
+            type: string
+            example: r.sterling@universalexport.net
           greeting:
             type: string
             example: Mr.
@@ -528,23 +535,60 @@ components:
           name2:
             type: string
             example: Limited
-          email:
-            type: string
-            example: r.sterling@universalexport.net
           phone:
             type: string
             example: +44 207 946 0139
           mobile:
             type: string
             example: +44 207 946 0139
-          fax:
-            type: string
           street:
             type: string
             example: 413 Longstream Road
           addressrow:
             type: string
             example: 'Unit 1D, Lock 71'
+          zipcode:
+            type: string
+            example: 'SE1 7TP'
+          state:
+            type: string
+            example: Bayern
+          plantNumber:
+            type: string
+            description: Internal field
+          instructions:
+            type: string
+          openingHoursMonToThuFrom:
+            type: integer
+            description: >-
+              open as of in minutes from start of day on monday to thursday
+          openingHoursMonToThuTo:
+            type: integer
+            description: >-
+              close as of in minutes from start of day on monday to thursday
+          openingHoursFriFrom:
+            type: integer
+            description: >-
+              open as of in minutes from start of day on friday
+          openingHoursFriTo:
+            type: integer
+            description: >-
+              close as of in minutes from start of day on friday
+          idTimeslot:
+            type: integer
+            description: Internal field
+          withDurationGrid:
+            type: boolean
+            default: false
+            description: Internal field
+          idDuration:
+            type: integer
+            description: Internal field
+          temporary:
+            type: boolean
+            default: false
+            example: false
+
     CompanyObject:
       type: object
       properties:
@@ -564,10 +608,21 @@ components:
         code:
           type: string
           example: RSTERLING
+        edifactId:
+          type: string
+          example: null
+        networkId:
+          type: integer
+          example: null
+        vatId:
+          type: string
+          example: DE64987444
+
         address:
           type: object
           allOf:
           -   $ref: '#/components/schemas/AddressObject'
+          
     PaymentTerms:
       type: object
       properties:
