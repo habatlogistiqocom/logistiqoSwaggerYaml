@@ -1379,17 +1379,17 @@ components:
           example: '23AT320000TVF8SXX6'
           description: :>-
               MRN for the manifest for which the unload notes were requested.
-        loginID:
+        anmeldeID:
           type: integer
           example: 263532
           description: :>-
               LoginID (AnmeldeId) for the manifest for which the unload notes were requested.
-        status:
+        statusCode:
           type: integer
           example: 0
           description: :>-
               Status code 
-        errorText:
+        errorMessage:
           type: string
           description: :>-
               Error text 
