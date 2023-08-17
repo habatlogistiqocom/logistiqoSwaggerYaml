@@ -1415,10 +1415,8 @@ components:
           type: integer
         startDate:
           type: string
-          format: date
         endDate:
           type: string
-          format: date
         inactive:
           type: boolean
         quantity:
@@ -1461,13 +1459,10 @@ components:
           type: string
         contractStartOn:
           type: string
-          format: date
         contractEndOn:
           type: string
-          format: date
         terminationOn:
           type: string
-          format: date
         contractDetails:
           type: object
           allOf:
@@ -1550,10 +1545,8 @@ components:
           type: string
         invoiceDate:
           type: string
-          format: date-time
         postingDate:
           type: string
-          format: date-time
         invoiceText:
           type: string
         companyNote:
@@ -1562,7 +1555,6 @@ components:
           type: string
         dueDate:
           type: string
-          format: date-time
         invoiceAmount:
           type: number
           format: double
@@ -1577,7 +1569,6 @@ components:
           type: boolean
         paidOn:
           type: string
-          format: date-time
         personYourRef:
           type: object
           allOf:
