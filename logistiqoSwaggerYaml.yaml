@@ -335,6 +335,15 @@ paths:
         
         tags:
           - Contract
+        parameters: 
+          - name: status
+            in: query
+            description: >-
+              select contracts by status active, inactive, all 
+            required: true
+            schema:
+              type: string
+              default: 'active'
         responses:
           '200':
             description: Logistiqo Contract
@@ -1463,6 +1472,10 @@ components:
           type: object
           allOf:
             - $ref: '#/components/schemas/ContractDetails'
+        customer:
+          type: object
+          allOf: 
+            - $ref: '#/components/schemas/CompanyObject'
     DirectDetails:
       type: object
       properties:
@@ -1597,6 +1610,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InvoiceShipments'
+        pdf:
+          type: object
+          items: 
+            $ref: '#/components/schemas/UploadedFile'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
