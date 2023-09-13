@@ -654,11 +654,16 @@ components:
           default: false
           description: >-
             If you specifically want to create shipments without a manifest, please keep the field at its default value "false". However, if you require a manifest that includes all shipments, please set the field to "true".
+        modifyManifest:
+          type: boolean
+          default: false
+          description: >-
+            If this field is set to true, it will modify an existing manifest with the same reference number instead of creating a new one. This feature is useful for consolidating multiple shipments into a single manifest, such as consolidating them into a master or a house air waybill.
         reference:
           type: string
           example: 023672
           description: >-
-            This field can contain either a unique random string or a unique ID, which is used to prevent the generation of duplicate manifests
+            This field can hold either a unique random string or a unique ID, serving the purpose of preventing the generation of duplicate manifests. When the "modifyManifest" parameter is set to true, the manifest will not be duplicated; instead, it will be modified accordingly.
         description:
           type: string
           description: >-
