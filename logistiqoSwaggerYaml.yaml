@@ -663,7 +663,7 @@ components:
           type: string
           example: 023672
           description: >-
-            This field can hold either a unique random string or a unique ID, serving the purpose of preventing the generation of duplicate manifests. When the "modifyManifest" parameter is set to true, the manifest will not be duplicated; instead, it will be modified accordingly.
+            This field can hold either a unique random string or a unique ID, serving the purpose of preventing the generation of duplicate manifests. When the "consolidate" field is set to true, the manifest will not be duplicated; instead, it will be modified accordingly.
         description:
           type: string
           description: >-
