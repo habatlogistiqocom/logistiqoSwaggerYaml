@@ -654,11 +654,11 @@ components:
           default: false
           description: >-
             If you specifically want to create shipments without a manifest, please keep the field at its default value "false". However, if you require a manifest that includes all shipments, please set the field to "true".
-        modifyManifest:
+        consolidate:
           type: boolean
           default: false
           description: >-
-            If this field is set to true, it will modify an existing manifest with the same reference number instead of creating a new one. This feature is useful for consolidating multiple shipments into a single manifest, such as consolidating them into a master or a house air waybill.
+           If this field is set to true, it will generate a new manifest or update an existing one with the same reference number while consolidating shipments within the manifest. To identify the existing shipments eligible for consolidation, you can reference them using customerReference and customerNumber; no other fields are necessary.
         reference:
           type: string
           example: 023672
