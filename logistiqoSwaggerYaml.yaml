@@ -948,6 +948,26 @@ components:
           example: '541641'
           description: :>-
             This unique identification is essential to ensure that the transaction is not mistakenly imported more than once. By using this identifier, we can accurately track and manage the transaction, preventing any errors or discrepancies that could arise from duplicate imports. Please ensure that this unique identifier is included in the transaction. In case of a get method the id of the transaction is shown in this field.
+        idShipment:
+          type: integer
+          example: '61664'
+          description: :>-
+            Only if the id of the shipment is known 
+        shipmentNumber:
+          type: string
+          example: '23 00050'
+          description: :>-
+            To ensure proper identification of a shipment, it is necessary to use either the idShipment, the shipment number, or a unique customer reference. Using any of these identifiers will allow for accurate and efficient tracking and management of the shipment. Please ensure that one of these identifiers is included.
+        customerReference:
+          type: string
+          example: '07049162454161'
+          description: :>-
+            To ensure proper identification of a shipment, it is necessary to use either the idShipment, the shipment number, or a unique customer reference. Using any of these identifiers will allow for accurate and efficient tracking and management of the shipment. Please ensure that one of these identifiers is included.
+        networkId:
+          type: integer
+          example: 7
+          description: :>-
+            In this context, the NetworkId represents the identifier of the specific customer involved within the network, which is exclusively employed for the exchange of status information among multiple Logistiqo domains.
         fileName:
           type: string
           example: deliveryNote001.pdf
