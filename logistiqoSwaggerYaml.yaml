@@ -754,10 +754,14 @@ components:
           type: string
           description: >-
             Please be aware that this field is mandatory and should include a unique customer number that is registered in the Logistiqo system. If the customerNumber is left empty, please provide  all the necessary company and address fields in the field customer.
+        shipmentNumber:
+          type: string
+          description: >-
+                This field exclusively holds the Shipment Number and is exclusively utilized by the GET method; in contrast, the POST method disregards this field entirely.
         customerReference:
           type: string
           description: >-
-            Please ensure that this required field contains a unique customer reference, which is typically the customer's order number. This information is crucial for proper order processing and fulfillment.
+               Please ensure that this required field contains a unique customer reference, which is typically the customer's order number. This information is crucial for proper order processing and fulfillment.
         internalReference:
           type: string
           example: ''
