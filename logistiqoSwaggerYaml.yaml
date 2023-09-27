@@ -1654,11 +1654,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/DirectDetail'
-        invoiceContract:
+        invoiceContracts:
           type: array
           items:
             $ref: '#/components/schemas/InvoiceContract'
-        invoiceShipment:
+        invoiceShipments:
           type: array
           items:
             $ref: '#/components/schemas/InvoiceShipment'
