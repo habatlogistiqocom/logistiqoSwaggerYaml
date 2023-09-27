@@ -1456,7 +1456,7 @@ components:
           type: string
           description: :>-
               Error text 
-    ContractDetails:
+    ContractDetail:
       type: object
       properties:
         id:
@@ -1518,14 +1518,15 @@ components:
         terminationOn:
           type: string
         contractDetails:
-          type: object
-          allOf:
-            - $ref: '#/components/schemas/ContractDetails'
+          type: array
+          default: []
+          items:
+            $ref: '#/components/schemas/ContractDetail'
         customer:
           type: object
           allOf: 
             - $ref: '#/components/schemas/CompanyObject'
-    DirectDetails:
+    DirectDetail:
       type: object
       properties:
         id:
@@ -1557,17 +1558,23 @@ components:
         deliveryDate:
           type: string
           description: The delivery date for the DirectDetail.
-    InvoiceContracts:
+    InvoiceContract:
       type: object
       properties:
         id:
           type: integer
-          description: The unique identifier for the ContractDetail.
-        contractDetail:
-          type: object
-          allOf: 
-            - $ref: '#/components/schemas/ContractDetails'
-          description: The unique identifier for the associated ContractDetail.
+          description: The unique identifier for the InvoiceContract.
+        name:
+          type: string
+          description: Name of the contrect.
+        description:
+          type: string
+          description: TDescription of the contract.
+        contractDetails:
+          type: array
+          default: []
+          items:
+            $ref: '#/components/schemas/ContractDetail'
         startDate:
           type: string
           description: The start date of the ContractDetail.
@@ -1577,7 +1584,7 @@ components:
         position:
           type: integer
           description: The position of the ContractDetail.
-    InvoiceShipments:
+    InvoiceShipment:
       type: object
       properties:
         id:
@@ -1646,18 +1653,18 @@ components:
         directDetails:
           type: array
           items:
-            $ref: '#/components/schemas/DirectDetails'
+            $ref: '#/components/schemas/DirectDetail'
         invoiceContract:
           type: array
           items:
-            $ref: '#/components/schemas/InvoiceContracts'
+            $ref: '#/components/schemas/InvoiceContract'
         invoiceShipment:
           type: array
           items:
-            $ref: '#/components/schemas/InvoiceShipments'
+            $ref: '#/components/schemas/InvoiceShipment'
         pdf:
-          type: object
-          items: 
+          type: array
+          items:
             $ref: '#/components/schemas/UploadedFile'
   securitySchemes:
     ApiKeyAuth:
