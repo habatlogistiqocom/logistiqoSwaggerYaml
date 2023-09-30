@@ -160,6 +160,34 @@ paths:
           description: No valid JSON Body in your request
         '500':
           description: Internal server error
+  /logistiqo/rest/api/v-1/manifest/get:
+    get:
+      summary: This API enables you to retrieve a Logistiqo manifest for seamless integration into your own system.
+      operationId: getManifest
+      description: >
+      
+         # Manifest
+          
+      tags:
+        - Manifest
+      parameters:
+        - name: id
+          in: query
+          description: >-
+            Choose a single manifest ID for retrieval.
+          required: true
+          schema:
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Manifest'
+        '404':
+          description: Not Found
   /logistiqo/rest/api/v-1/shipment/{id}:
     get:
       summary: This API allows you to retrieve a shipment by its unique ID. 
