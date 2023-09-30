@@ -1569,12 +1569,11 @@ components:
           description: Name of the contrect.
         description:
           type: string
-          description: TDescription of the contract.
-        contractDetails:
-          type: array
-          default: []
-          items:
-            $ref: '#/components/schemas/ContractDetail'
+          description: Description of the contract.
+        contractDetail:
+          type: object
+          allOf:
+            - $ref: '#/components/schemas/ContractDetail'          
         startDate:
           type: string
           description: The start date of the ContractDetail.
