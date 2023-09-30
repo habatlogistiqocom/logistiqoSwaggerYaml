@@ -160,7 +160,7 @@ paths:
           description: No valid JSON Body in your request
         '500':
           description: Internal server error
-  /logistiqo/rest/api/v-1/manifest/get:
+  /logistiqo/rest/api/v-1/manifest/get{id}:
     get:
       summary: This API enables you to retrieve a Logistiqo manifest for seamless integration into your own system.
       operationId: getManifest
@@ -171,14 +171,14 @@ paths:
       tags:
         - Manifest
       parameters:
-        - name: id
-          in: query
-          description: >-
-            Choose a single manifest ID for retrieval.
-          required: true
+        - in: path
+          name: id
           schema:
             type: integer
-            default: 0
+          required: true
+          default: 0
+          description: >-
+            Choose a single manifest ID for retrieval.
       responses:
         '200':
           description: OK
