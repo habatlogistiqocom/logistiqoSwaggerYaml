@@ -730,12 +730,17 @@ components:
           default: DEPOT
           description: >-
             Please provide the desired depot for the execution of this manifest.
+        customerNumber:
+          type: string
+          example: 10002
+          description: >-
+            This requirement specifically pertains to MAWB and HAWB manifest types. If the customerNumber field is left blank, it is imperative to ensure that all essential company and address information is provided within the 'customer' object.
         customer:
           type: object
           allOf:
             - $ref: '#/components/schemas/CompanyObject'
           description: >-
-            In this section, you can provide detailed customer information specific to manifests of the MAWB and HAWB types.
+            In this section, you have the option to furnish comprehensive customer details tailored for MAWB and HAWB manifest types. This is only required when no companyNumber is provided.
         subcontractor:
           type: object
           allOf:
