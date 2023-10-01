@@ -686,6 +686,10 @@ components:
           default: false
           description: >-
            If this field is set to true, it will generate a new manifest or update an existing one with the same reference number while consolidating shipments within the manifest. To identify the existing shipments eligible for consolidation, you can reference them using customerReference and customerNumber; no other fields are necessary.
+        manifestNumber:
+          type: string
+          description: >-
+           This field, which holds the unique manifest number, is only significant when exporting manifests; it holds no relevance when importing manifests.         
         reference:
           type: string
           example: 023672
@@ -713,20 +717,17 @@ components:
         date:
           type: string
           example: 12.06.2023 12:00
-          default: current date
           description: >-
             Please indicate the desired start date in the format dd.MM.yyyy HH:mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.
         dateto:
           type: string
           example: 12.06.2023 16:00
-          default: date
           description: >-
             Please provide the desired completion date in the format dd.MM.yyyy HH:mm or dd.MM.yyyy, and optionally the time, for the execution of this manifest.
         depot:
           type: string
           example: HUB01
           default: DEPOT
-          x-visibility: hidden
           description: >-
             Please provide the desired depot for the execution of this manifest.
         subcontractor:
@@ -739,6 +740,8 @@ components:
           type: object
           allOf:
             - $ref: '#/components/schemas/Vehicle'
+          description: >-
+            In this section, you have the capability to input comprehensive information regarding the vehicle which has been assigned to the specific manifest.
         action:
           type: string
           example: ''
