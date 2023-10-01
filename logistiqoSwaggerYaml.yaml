@@ -176,7 +176,6 @@ paths:
           schema:
             type: integer
           required: true
-          default: 0
           description: >-
             Choose a single manifest ID for retrieval.
       responses:
@@ -735,7 +734,11 @@ components:
           allOf:
             - $ref: '#/components/schemas/CompanyObject'
           description: >-
-            If this manifest represents a Contract of Carriage, please enter the Logistiqo-specified company code of the subcontractor responsible for carrying out the transportation.
+            In this section, you have the capability to input comprehensive information regarding the subcontractor who has been assigned to the specific manifest.
+        vehicle:
+          type: object
+          allOf:
+            - $ref: '#/components/schemas/Vehicle'
         action:
           type: string
           example: ''
@@ -746,6 +749,16 @@ components:
           example: KE946
           description: >-
             If this manifest represents a Master Air Waybill, please enter the Flight Number in the corresponding field.
+        subcontractorInfo:
+          type: string
+          example: 'Bigfoot Express'
+          description: >-
+             If the manifest pertains to a trucking operation and you find that you don't require all the details of the subcontractor, such as the address, contact information, and company details, you can simply utilize this field to input the subcontractor's name. Alternatively, you can opt to generate all the necessary information related to the subcontractor as outlined in the "subcontractor" field.
+        subcontractorVehicleInfo:
+          type: string
+          example: 'RO IQ 123'
+          description: >-
+             If the manifest pertains to a trucking operation and you find that you don't require all the details of the vehicle, you can simply utilize this field to input the vehicles license plate. Alternatively, you can opt to generate all the necessary information related to the vehicle as outlined in the "vehicle" field.
         shipper:
           type: object
           allOf:
@@ -1611,18 +1624,30 @@ components:
         position:
           type: integer
           description: The position of the ContractDetail.
+    Vehicle:
+      type: object
+      properties:
+        licenseplate:
+          type: string
+          description: The unique license plate of the vehicle.
+        vehicleType:
+          type: string
+          description: The vehicle type of the vehicle. Possible values are TRUCK, CAR, SMALL_TRUCK
+        description:
+          type: string
+          description: The description of the vehicle.
     InvoiceShipment:
       type: object
       properties:
         id:
           type: integer
-          description: The unique identifier for the TransportManifest.
+          description: The unique identifier for the InvoiceShipment.
         position:
           type: integer
-          description: The position of the TransportManifest.
+          description: The position of the InvoiceShipment.
         description:
           type: string
-          description: The description of the TransportManifest.
+          description: The description of the InvoiceShipment.
     Invoice:
       type: object
       properties:
