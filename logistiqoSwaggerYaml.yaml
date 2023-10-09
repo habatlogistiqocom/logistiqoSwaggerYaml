@@ -653,7 +653,8 @@ components:
         vatId:
           type: string
           example: DE64987444
-
+        stripeCustomerId:
+          type: string
         address:
           type: object
           allOf:
