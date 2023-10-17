@@ -1481,7 +1481,12 @@ components:
           type: string
           example: '200'
           description: :>-
-              Status as in Response Header.
+            Status as in Response Header.
+        error:
+          type: boolean
+          example: true
+          description: :>-
+            Indicates an error if true.
         message:
           type: string
           example: 'The Manifest 1234567 was created successfully'
