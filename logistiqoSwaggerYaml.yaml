@@ -653,7 +653,8 @@ components:
         vatId:
           type: string
           example: DE64987444
-
+        stripeCustomerId:
+          type: string
         address:
           type: object
           allOf:
@@ -1489,6 +1490,14 @@ components:
             Common Errors
             - Missing Fields, Some required fields were not provided in the API request, which caused the import process to fail.
             - Incorrect Fields, The data provided for certain fields in the API request was not in the expected format or did not meet the validation requirements, resulting in an error during import.
+        details:
+          type: array
+          description: :>-
+            List of details, including incorrect shipments, missing required fields, and other validation errors.
+          items:
+              type: string
+           
+            
     UnloadingNotes:
       type: object
       properties:
