@@ -255,23 +255,44 @@ paths:
        operationId: postCompanies
        description: >
          
-         # Companies
+         # Company
          
      
           
        tags:
-        - Companies
+        - Company
        requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Companies'
+              $ref: '#/components/schemas/Company'
        responses:
         '200':
-          description: Successfully added Companies.
+          description: Successfully added Company.
         '400':
           description: Invalid input.
+   get:
+      summary: Retrieve a Logistiqo companies from this endpoint. The response will be an array of JSON objects representing the companies.
+      operationId: getCompany
+      description: >
+         
+       # Company
+         
+     
+          
+      tags:
+        - Company
+      responses:
+        '200':
+          description: Logistiqo Contract
+          content: 
+            application/json:
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Company'
+                   
   /logistiqo/rest/api/v-1/scanIn:
     post:
        summary: This API allows you to add barcode scans for the warehouse. You need to provide a valid JSON request body with the barcode information.
@@ -520,7 +541,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Status'
-    Companies:
+    Company:
       type: array
       items:
          $ref: '#/components/schemas/CompanyObject'
