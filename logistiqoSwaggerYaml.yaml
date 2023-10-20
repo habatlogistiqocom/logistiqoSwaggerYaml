@@ -1600,9 +1600,9 @@ components:
         note:
           type: string
         clientId:
-          type: string
+          type: integer
         companyId:
-          type: string
+          type: integer
         contractStartOn:
           type: string
         contractEndOn:
