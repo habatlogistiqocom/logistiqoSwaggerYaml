@@ -1601,6 +1601,8 @@ components:
           type: string
         clientId:
           type: string
+        companyId:
+          type: string
         contractStartOn:
           type: string
         contractEndOn:
@@ -1612,10 +1614,6 @@ components:
           default: []
           items:
             $ref: '#/components/schemas/ContractDetail'
-        customer:
-          type: object
-          allOf: 
-            - $ref: '#/components/schemas/CompanyObject'
     DirectDetail:
       type: object
       properties:
