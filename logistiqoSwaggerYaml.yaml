@@ -1639,7 +1639,7 @@ components:
         description:
           type: string
           description: Description of the contract.
-        contractDetail:
+        contractDetails:
           type: object
           allOf:
             - $ref: '#/components/schemas/ContractDetail'          
