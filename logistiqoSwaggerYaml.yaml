@@ -645,6 +645,7 @@ components:
             type: boolean
             default: false
             example: false
+
     CompanyObject:
       type: object
       properties:
@@ -679,6 +680,7 @@ components:
           type: object
           allOf:
           -   $ref: '#/components/schemas/AddressObject'
+          
     PaymentTerms:
       type: object
       properties:
@@ -1520,6 +1522,8 @@ components:
             List of details, including incorrect shipments, missing required fields, and other validation errors.
           items:
               type: string
+           
+            
     UnloadingNotes:
       type: object
       properties:
@@ -1563,9 +1567,6 @@ components:
           type: integer
         unit:
           type: string
-        price:
-          type: number
-          format: double
         amount:
           type: number
           format: double
