@@ -847,7 +847,7 @@ components:
         additionalReference:
           type: string
           description: >-
-               Please ensure that this required field contains a none unique customer reference.
+               This field, which lacks uniqueness, includes an additional customer reference.
         internalReference:
           type: string
           example: ''
