@@ -714,9 +714,14 @@ components:
            This field, which holds the unique manifest number, is only significant when exporting manifests; it holds no relevance when importing manifests.         
         reference:
           type: string
-          example: 023672
+          example: aliwhefn405lkj47hbsjgabjbkgxd213
           description: >-
             This field can hold either a unique random string or a unique ID, serving the purpose of preventing the generation of duplicate manifests. When the "consolidate" field is set to true, the manifest will not be duplicated; instead, it will be modified accordingly.
+        manifestReference:
+          type: string
+          example: C023672
+          description: >-
+            This field serves as a pointer to the corresponding manifest. In the event that a manifest with this specified value is detected in Logistiqo, shipments will seamlessly integrate into the pre-existing manifest. Conversely, if no manifest is identified with this particular value, a new manifest will be generated.
         description:
           type: string
           description: >-
