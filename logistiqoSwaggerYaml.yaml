@@ -844,6 +844,10 @@ components:
           type: string
           description: >-
                Please ensure that this required field contains a unique customer reference, which is typically the customer's order number. This information is crucial for proper order processing and fulfillment.
+        additionalReference:
+          type: string
+          description: >-
+               Please ensure that this required field contains a none unique customer reference.
         internalReference:
           type: string
           example: ''
