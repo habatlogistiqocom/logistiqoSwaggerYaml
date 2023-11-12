@@ -703,6 +703,11 @@ components:
           default: false
           description: >-
             If you specifically want to create shipments without a manifest, please keep the field at its default value "false". However, if you require a manifest that includes all shipments, please set the field to "true".
+        createHawb:
+          type: boolean
+          default: false
+          description: >-
+            To facilitate the creation of a non-existing House Air Waybill (HAWB), kindly designate the relevant field as "true." Conversely, if the shipment corresponds directly to the HAWB, set this field to "false." Enabling this option will result in the generation of a manifest aligning with the specified HAWB details within the shipment.
         consolidate:
           type: boolean
           default: false
