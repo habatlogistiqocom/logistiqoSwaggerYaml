@@ -187,7 +187,7 @@ paths:
                 $ref: '#/components/schemas/Manifest'
         '404':
           description: Not Found
-  /logistiqo/rest/api/v-1/shipment/{id}:
+  /logistiqo/rest/api/v-1/shipment/get/{id}:
     get:
       summary: This API allows you to retrieve a shipment by its unique ID. 
       operationId: getShipment
