@@ -676,6 +676,12 @@ components:
           example: DE64987444
         stripeCustomerId:
           type: string
+        iban:
+          type: string
+          example: null
+        bic: 
+          type: string
+          example: null
         address:
           type: object
           allOf:
