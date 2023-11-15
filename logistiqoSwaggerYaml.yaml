@@ -682,6 +682,9 @@ components:
         bic: 
           type: string
           example: null
+        paymentMethod:
+          type: string
+          example: sepa
         address:
           type: object
           allOf:
