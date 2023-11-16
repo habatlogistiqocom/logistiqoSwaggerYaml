@@ -717,7 +717,7 @@ components:
           default: false
           description: >-
             To facilitate the creation of a non-existing House Air Waybill (HAWB), kindly designate the relevant field as "true." Conversely, if the shipment corresponds directly to the HAWB, set this field to "false." Enabling this option will result in the generation of a manifest aligning with the specified HAWB details within the shipment.
-        removeShipments:
+        synchronizeShipments:
           type: boolean
           default: false
           description: >-
