@@ -187,7 +187,7 @@ paths:
                 $ref: '#/components/schemas/Manifest'
         '404':
           description: Not Found
-  /logistiqo/rest/api/v-1/shipment/{id}:
+  /logistiqo/rest/api/v-1/shipment/get/{id}:
     get:
       summary: This API allows you to retrieve a shipment by its unique ID. 
       operationId: getShipment
@@ -676,6 +676,15 @@ components:
           example: DE64987444
         stripeCustomerId:
           type: string
+        iban:
+          type: string
+          example: null
+        bic: 
+          type: string
+          example: null
+        paymentMethod:
+          type: string
+          example: sepa
         address:
           type: object
           allOf:
@@ -708,11 +717,11 @@ components:
           default: false
           description: >-
             To facilitate the creation of a non-existing House Air Waybill (HAWB), kindly designate the relevant field as "true." Conversely, if the shipment corresponds directly to the HAWB, set this field to "false." Enabling this option will result in the generation of a manifest aligning with the specified HAWB details within the shipment.
-        consolidate:
+        removeShipments:
           type: boolean
           default: false
           description: >-
-           If this field is set to true, it will generate a new manifest or update an existing one with the same reference number while consolidating shipments within the manifest. To identify the existing shipments eligible for consolidation, you can reference them using customerReference and customerNumber; no other fields are necessary.
+           If this field is set to true, the API will exclude and remove shipments that exist in the corresponding Logistiqo manifest but are not included here, ensuring synchronization and making the Logistiqo manifest equal to the current one. When this field is set to false, you can conveniently add individual shipments to an existing manifest that already includes shipments.
         manifestNumber:
           type: string
           description: >-
@@ -746,6 +755,11 @@ components:
           example: 180 Korean Air Lines
           description: >-
             If this manifest represents a Master Air Waybill, the field should contain the name of the first carrier.
+        deadline:
+          type: string
+          example: 12.06.2023 12:00
+          description: >-
+           Please specify the deadline date and time for delivering this manifest (MAWB) to the airport in the format dd.MM.yyyy HH:mm.
         date:
           type: string
           example: 12.06.2023 12:00
