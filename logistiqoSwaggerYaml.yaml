@@ -755,6 +755,16 @@ components:
           example: 180 Korean Air Lines
           description: >-
             If this manifest represents a Master Air Waybill, the field should contain the name of the first carrier.
+        airportOfDeparture:
+          type: string
+          example: FRA
+          description: >-
+            Enter the IATA code corresponding to the Airport of Departure.
+        finalDestination:
+          type: string
+          example: ORD
+          description: >-
+            Enter the IATA code corresponding to the Final Destination Airport.
         deadline:
           type: string
           example: 12.06.2023 12:00
