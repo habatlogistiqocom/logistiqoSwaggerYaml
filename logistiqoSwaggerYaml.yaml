@@ -249,7 +249,7 @@ paths:
           description: Internal server error
         'default': 
           description: The response includes a response status object containing a 'Message' and a 'Status' wherever applicable
-  /logistiqo/rest/api/v-1/company:
+  /logistiqo/rest/api/v-1/company/add:
    post:
        summary: This API allows you to add companies. You need to provide a valid JSON request body with the company information.
        operationId: postCompanies
@@ -272,9 +272,10 @@ paths:
           description: Successfully added Company.
         '400':
           description: Invalid input.
+  /logistiqo/rest/api/v-1/company/get:
    get:
-      summary: Retrieve a Logistiqo companies from this endpoint. The response will be an array of JSON objects representing the companies.
-      operationId: getCompany
+      summary: Retrieve an array of Logistiqo companies by accessing this endpoint. The server will respond with an array of JSON objects that represent the respective companies.
+      operationId: getCompanies
       description: >
          
        # Company
@@ -285,13 +286,13 @@ paths:
         - Company
       responses:
         '200':
-          description: Logistiqo Contract
+          description: Logistiqo CompanyObject
           content: 
             application/json:
               schema:
                 type: array
                 items: 
-                  $ref: '#/components/schemas/Company'
+                  $ref: '#/components/schemas/CompanyObject'
                    
   /logistiqo/rest/api/v-1/scanIn:
     post:
@@ -541,10 +542,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Status'
-    Company:
-      type: array
-      items:
-         $ref: '#/components/schemas/CompanyObject'
     AddressObject:
       type: object
       properties:
@@ -567,7 +564,12 @@ components:
             type: string
             example: GB
             description: >-
-              Please enter the two-letter country code according to the ISO  3166-1 alpha-2 standard. These codes are internationally recognized and defined by the International Organization for Standardization as part of the ISO 3166 standard.
+              Please enter the two-letter country code according to the ISO 3166-1 alpha-2 standard. These codes are internationally recognized and defined by the International Organization for Standardization as part of the ISO 3166 standard.
+          country:
+            type: string
+            example: UNITED KINGDOM
+            description: >-
+              Please input the country name in English using capital letters.
           email:
             type: string
             example: r.sterling@universalexport.net
