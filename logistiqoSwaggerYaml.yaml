@@ -252,7 +252,7 @@ paths:
   /logistiqo/rest/api/v-1/company/add:
    post:
        summary: This API allows you to add companies. You need to provide a valid JSON request body with the company information.
-       operationId: postCompanies
+       operationId: postCompany
        description: >
          
          # Company
@@ -266,7 +266,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Company'
+              $ref: '#/components/schemas/CompanyObject'
        responses:
         '200':
           description: Successfully added Company.
@@ -767,6 +767,11 @@ components:
           example: ORD
           description: >-
             Enter the IATA code corresponding to the Final Destination Airport.
+        containerMode:
+          type: string
+          example: LSE
+          description: >-
+           Indicate the container mode for ULD (Unit Load Device) Buildup. Valid entries include LSE (Loose), ULD, BCH (Buyers consolidation), and OTH (Other).
         deadline:
           type: string
           example: 12.06.2023 12:00
@@ -839,6 +844,10 @@ components:
           type: object
           allOf:
             - $ref: '#/components/schemas/AddressObject'
+        unitLoadDevices :
+          type: array
+          items:
+            $ref: '#/components/schemas/UnitLoadDevice'
         error:
           type: boolean
           example: false
@@ -1723,6 +1732,15 @@ components:
         description:
           type: string
           description: The description of the vehicle.
+    UnitLoadDevice:
+      type: object
+      properties:
+        number:
+          type: string
+          example: 'PMC1234'
+        contour:
+          type: string
+          example: 'PMC-Q5'
     InvoiceShipment:
       type: object
       properties:
