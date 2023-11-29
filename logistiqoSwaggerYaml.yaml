@@ -836,6 +836,10 @@ components:
           example: 'RO IQ 123'
           description: >-
              If the manifest pertains to a trucking operation and you find that you don't require all the details of the vehicle, you can simply utilize this field to input the vehicles license plate. Alternatively, you can opt to generate all the necessary information related to the vehicle as outlined in the "vehicle" field.
+        groundHandler:
+          type: object
+          allOf:
+            - $ref: '#/components/schemas/AddressObject'
         shipper:
           type: object
           allOf:
@@ -1327,6 +1331,11 @@ components:
         minTemp:  
           type: number
           format: double
+        dangerousGoods:
+          type: boolean
+          default: false
+          description: >-
+            This field denotes that the specified items are categorized as hazardous goods according to the regulations outlined in the European Agreement concerning the International Carriage of Dangerous Goods by Road (ADR)..
         xray:
           type: boolean
           default: false
