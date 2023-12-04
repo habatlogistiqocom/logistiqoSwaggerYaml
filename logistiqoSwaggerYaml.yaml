@@ -1744,6 +1744,9 @@ components:
     UnitLoadDevice:
       type: object
       properties:
+        uniqueNumber:
+          type: string
+          example: '654165141'
         number:
           type: string
           example: 'PMC1234'
