@@ -1032,6 +1032,10 @@ components:
           default: []
           items:
             $ref: '#/components/schemas/Service'
+        statusnodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Status'
       required:
         - customerNumber
         - customerReference
@@ -1584,9 +1588,7 @@ components:
           description: :>-
             List of details, including incorrect shipments, missing required fields, and other validation errors.
           items:
-              type: string
-           
-            
+              type: string    
     UnloadingNotes:
       type: object
       properties:
