@@ -207,6 +207,12 @@ paths:
             type: integer
           required: true
           description: The ID of the shipment to get.
+        - in: query
+          name: includeUploadedFiles
+          schema:
+            type: boolean
+          required: false
+          description: Flag indicating whether to include upload files in the response. Default is false.
       responses:
         '200':
           description: OK
@@ -293,7 +299,6 @@ paths:
                 type: array
                 items: 
                   $ref: '#/components/schemas/CompanyObject'
-                   
   /logistiqo/rest/api/v-1/scanIn:
     post:
        summary: This API allows you to add barcode scans for the warehouse. You need to provide a valid JSON request body with the barcode information.
@@ -1027,6 +1032,10 @@ components:
           default: []
           items:
             $ref: '#/components/schemas/Service'
+        statusnodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Status'
       required:
         - customerNumber
         - customerReference
@@ -1579,9 +1588,7 @@ components:
           description: :>-
             List of details, including incorrect shipments, missing required fields, and other validation errors.
           items:
-              type: string
-           
-            
+              type: string    
     UnloadingNotes:
       type: object
       properties:
@@ -1744,15 +1751,21 @@ components:
     UnitLoadDevice:
       type: object
       properties:
-        uniqueNumber:
+        jobId:
           type: string
           example: '654165141'
         number:
           type: string
           example: 'PMC1234'
-        contour:
+        type:
           type: string
           example: 'PMC-Q5'
+        description:
+          type: string
+          example: 'PMC-Q5'
+        mode:
+          type: string
+          example: 'ULD'
     InvoiceShipment:
       type: object
       properties:
