@@ -1766,6 +1766,18 @@ components:
         mode:
           type: string
           example: 'ULD'
+        content:
+          type: array
+          items:
+            type: object
+            properties: 
+              shipmentNumber:
+                type: string
+                example: "23 00567"
+              customerReference:
+                type: string
+                example: "CR67890"
+          
     InvoiceShipment:
       type: object
       properties:
