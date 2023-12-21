@@ -1370,11 +1370,16 @@ components:
            default: 0
            description: >-
             Internal field
+        packlineId:
+           type: string
+           default: ""
+           description: >-
+            The importId is only required if you intend to change goods items through the API. It is used to find the correct goods item. If no item is found, a new item will be created.
         importId:
           type: string
           example: '12345678'
           description: >-
-            The importId is only required if you intend to change goods items through the API. It is used to find the correct goods item. If no item is found, a new item will be created.
+            Like packlineId the importId is only required if you intend to change goods items through the API. It is used to find the correct goods item. If no item is found, a new item will be created.
     Calloff:
       type: object
       properties:
@@ -1777,6 +1782,16 @@ components:
               customerReference:
                 type: string
                 example: "CR67890"
+              quantity:
+                type: number
+                example: 2
+                description: :>-
+                    The quantity specifies the number of identical goods items (with the same packlineId) consolidated on a specific Unit Load Device (ULD).
+              packlineId:
+                type: string
+                example: "23 00567"
+                description: :>-
+                    The packlineId functions as a distinctive identifier for delineating particular sets of goods or items consolidated on a single Unit Load Device (ULD).
           
     InvoiceShipment:
       type: object
