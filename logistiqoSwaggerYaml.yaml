@@ -1307,12 +1307,6 @@ components:
           example: 100
           description: >-
             When entering the height of the goods item, use centimeters (cm) as the unit of measurement. If you need to use a different unit of measurement, you can define it in the Logistiqo application. For further assistance, please reach out to our support team.
-        setpoint:
-          type: boolean
-          example: true
-          default: false
-          description: >-
-            This indicates whether the goods item requires a setpoint temperature or not.
         codAmount:
           type: number
           format: double
@@ -1334,6 +1328,17 @@ components:
           description: >-
             This field corresponds to the TemperatureRange table in the Logistiqo application. If a temperature range is entered that is not available in Logistiqo, it will be created. However, please note that the actual range must be manually entered in Logistiqo afterwards.
           example: TC02
+        setpoint:
+          type: boolean
+          example: true
+          default: false
+          description: >-
+            This indicates whether the goods item requires a setpoint temperature or not.
+            The `TemperatureType` field in Logistiqo will be adjusted based on the following conditions:
+
+            - If `setpoint` is true, then `TemperatureType` will be set to 2 (Setpoint).
+            - If `setpoint` is false and `MaxTemp` is greater than `MinTemp`, then `TemperatureType` will be set to 1 (From-To).
+            - If `setpoint` is false and either `MaxTemp` equals `MinTemp`, or MaxTemp is null, or `MinTemp` is null, then `TemperatureType` will be set to 0 (None).
         maxTemp:  
           type: number
           format: double
