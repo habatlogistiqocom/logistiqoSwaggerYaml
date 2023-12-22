@@ -1332,13 +1332,18 @@ components:
           type: boolean
           example: true
           default: false
-          description: >-
+          description: >
             This indicates whether the goods item requires a setpoint temperature or not.
-            The `TemperatureType` field in Logistiqo will be adjusted based on the following conditions:
-
-            - If `setpoint` is true, then `TemperatureType` will be set to 2 (Setpoint).
-            - If `setpoint` is false and `MaxTemp` is greater than `MinTemp`, then `TemperatureType` will be set to 1 (From-To).
-            - If `setpoint` is false and either `MaxTemp` equals `MinTemp`, or MaxTemp is null, or `MinTemp` is null, then `TemperatureType` will be set to 0 (None).
+        temperatureType:
+          type: integer
+          default: 0
+          example: 1
+          enum: [0, 1, 2]
+          description: |
+            The `temperatureType` field in Logistiqo will automatically be adjusted based on the following conditions:
+            - 0: If `setpoint` is false and either `maxTemp` equals `minTemp`, or maxTemp is null, or `minTemp` is null, then `temperatureType` will be set to 0 (None).
+            - 1: If `setpoint` is false and `maxTemp` is greater than `minTemp`, then `temperatureType` will be set to 1 (From-To).
+            - 2: If `setpoint` is true, then `temperatureType` will be set to 2 (setpoint).
         maxTemp:  
           type: number
           format: double
