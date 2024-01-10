@@ -1360,6 +1360,11 @@ components:
           default: false
           description: >-
             This field indicates that the described goods must undergo screening.
+        secured:
+          type: boolean
+          default: false
+          description: >-
+            This field denotes that the specified goods have undergone security screening, either by the primary customer of the shipment or the secondary customer of the initial customer.
         stackable:
           type: boolean
           default: false
