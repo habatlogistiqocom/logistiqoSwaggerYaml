@@ -1771,20 +1771,37 @@ components:
     UnitLoadDevice:
       type: object
       properties:
+        consolNumber:
+          type: string
+          description: :>-
+              The consolnumber serves as a direct reference to the Master Air Waybill (MAWB), housing the comprehensive list of Unit Load Devices (ULDs) associated with this particular MAWB.
+          example: 'C403022564'
         jobId:
           type: string
-          example: '654165141'
+          description: :>-
+              The JobId is an unique reference to a specific ULD
+          example: 'D654165141'
         number:
           type: string
-          example: 'PMC1234'
+          description: :>-
+              The identification number assigned to a specific Unit Load Device (ULD) may not necessarily be unique, as ULDs are often reused multiple times.
+          example: 'ULD1234'
         type:
           type: string
+          description: |
+              This field denotes a subtype within the mode category, akin to a specialized classification of the mode ULD.
           example: 'PMC-Q5'
         description:
           type: string
           example: 'PMC-Q5'
         mode:
           type: string
+          description: |
+              Type of ULD could be for example:     
+              - ULD (Generic term for any Unit Load Device)
+              - LSE (Loose)
+              - BCH (Bulk Cargo Hold)
+              - OTH (Other, which can refer to miscellaneous or specific ULD types not covered by standard codes)
           example: 'ULD'
         content:
           type: array
