@@ -888,15 +888,23 @@ components:
         shipmentNumber:
           type: string
           description: >-
-                This field exclusively holds the Shipment Number and is exclusively utilized by the GET method; in contrast, the POST method disregards this field entirely.
+            This field exclusively holds the Shipment Number and is exclusively utilized by the GET method; in contrast, the POST method disregards this field entirely.
         customerReference:
           type: string
           description: >-
-               Please ensure that this required field contains a unique customer reference, which is typically the customer's order number. This information is crucial for proper order processing and fulfillment.
+            Please ensure that this required field contains a unique customer reference, which is typically the customer's order number. This information is crucial for proper order processing and fulfillment.
+        customerReferenceUnique:
+          type: boolean
+          description: >-
+            This field denotes the uniqueness of the CustomerReference, making it a reliable identifier for locating shipments within the database.
+        barcodeReference:
+          type: string
+          description: >-
+            This field can serve as an alternative to the CustomerReference field for the scanning process of shipments.
         additionalReference:
           type: string
           description: >-
-               This field, which lacks uniqueness, includes an additional customer reference.
+            This field, which lacks uniqueness, includes an additional customer reference.
         internalReference:
           type: string
           example: ''
