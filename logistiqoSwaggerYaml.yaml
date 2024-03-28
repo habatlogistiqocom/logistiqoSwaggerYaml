@@ -915,6 +915,10 @@ components:
             This field should only be used if the payment term for this shipment differs from the customer's default payment term as defined in the Logistiqo application.
           allOf:
             - $ref: '#/components/schemas/PaymentTerms'
+        securedStatus:
+          type: string
+          description: >-
+            A three-letter code serves as an indicator of the secured status for shipments posted within the API.
         branch:
           type: string
           description: >-
