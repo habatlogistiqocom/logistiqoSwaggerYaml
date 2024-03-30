@@ -878,7 +878,7 @@ components:
         reference:
            type: string
         expectedPiececount:
-           type: string
+           type: integer
         expectedArrivalDate:
            type: string
     Shipment:
