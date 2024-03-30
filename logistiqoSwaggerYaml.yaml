@@ -865,11 +865,11 @@ components:
         manifestGoods:
           type: array
           items:
-            $ref: '#/components/schemas/Shipment'
+            $ref: '#/components/schemas/ManifestGoods'
         shipments:
           type: array
           items:
-            $ref: '#/components/schemas/ManifestGoods'
+            $ref: '#/components/schemas/Shipment'
     ManifestGoods:
       type: object
       properties:
