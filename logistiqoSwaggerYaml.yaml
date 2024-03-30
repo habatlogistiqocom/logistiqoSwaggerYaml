@@ -862,10 +862,25 @@ components:
           example: false
           description: >-
             This field signifies the presence of errors in the Manifest.
-        shipments:
+        manifestGoods:
           type: array
           items:
             $ref: '#/components/schemas/Shipment'
+        shipments:
+          type: array
+          items:
+            $ref: '#/components/schemas/ManifestGoods'
+    ManifestGoods:
+      type: object
+      properties:
+        itemNo:
+           type: string
+        reference:
+           type: string
+        expectedPiececount:
+           type: string
+        expectedArrivalDate:
+           type: string
     Shipment:
       type: object
       properties:
