@@ -798,6 +798,12 @@ components:
           default: DEPOT
           description: >-
             Please provide the desired depot for the execution of this manifest.
+        typeTSC:
+          type: string
+          example: PO
+          default: PO
+          description: >-
+            Internal field do not use
         customerNumber:
           type: string
           example: 10002
