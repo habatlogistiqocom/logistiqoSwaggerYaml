@@ -1668,24 +1668,24 @@ components:
             The type of pre-paper document associated with the shipment.
 
         containerized:
-          type: string
+          type: boolean
           description: >-
             Indicates whether the shipment is containerized.
 
         surrendered:
-          type: string
+          type: boolean
           description: >-
             Indicates if the Bill of Lading has been surrendered.
 
         prepaid:
-          type: string
+          type: boolean
           description: >-
             Indicates whether the shipment charges are prepaid.
 
         letterOfCredit:
-          type: string
+          type: boolean
           description: >-
-            Details of the letter of credit associated with the shipment.
+            Indicates whether this Bill of Lading is associated with a letter of credit.
 
         estimatedTimeOfDeparture:
           type: string
