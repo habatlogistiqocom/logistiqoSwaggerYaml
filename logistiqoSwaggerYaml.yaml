@@ -3,34 +3,34 @@ info:
   title: LogistiqoAPI
   version: '1.0'
   description: >-
-  
     
-        - Go to [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/habatlogistiqocom/logistiqoSwaggerYaml/main/logistiqoSwaggerYaml.yaml)
-  
-         An API, or Application Programming Interface, is a set of protocols,
-          routines, and tools that enable different software applications to
-          communicate and exchange data with each other. It defines how software
-          components should interact and helps to simplify software development by
-          abstracting the underlying implementation. APIs are essential for building
-          complex and interconnected software systems.
-          
-           ## Contact Us
-      
-      
-          If you have problems or questions, please read the following information:
-      
-      
-          - [FAQ](https://www.logistiqo.com/faq/)
-      
-          - [Contact us](https://www.logistiqo.com/contact.php)
-      
-      
-          To stay informed about the latest developments, you can
-      
-      
-          - Follow us on [Twitter](https://twitter.com/logistiqo/),
-
     
+    - Go to [Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/habatlogistiqocom/logistiqoSwaggerYaml/main/logistiqoSwaggerYaml.yaml)
+    
+     An API, or Application Programming Interface, is a set of protocols,
+      routines, and tools that enable different software applications to
+      communicate and exchange data with each other. It defines how software
+      components should interact and helps to simplify software development by
+      abstracting the underlying implementation. APIs are essential for building
+      complex and interconnected software systems.
+    
+       ## Contact Us
+    
+    
+      If you have problems or questions, please read the following information:
+    
+    
+      - [FAQ](https://www.logistiqo.com/faq/)
+    
+      - [Contact us](https://www.logistiqo.com/contact.php)
+    
+    
+      To stay informed about the latest developments, you can
+    
+    
+      - Follow us on [Twitter](https://twitter.com/logistiqo/),
+  
+  
   contact:
     email: info@logistiqo.com
     url: https://www.logistiqo.com/
@@ -42,10 +42,10 @@ paths:
       summary: Retrieve shipment information from this endpoint. You can filter the shipments based on various criteria such as shipment number, customer reference, creation date, modification date, and status modification date.
       operationId: getShipmentList
       description: >
+        
+        # Shipment
       
-          # Shipment
-
-       
+      
       tags:
         - Shipment Table
       parameters:
@@ -114,24 +114,24 @@ paths:
                 $ref: '#/components/schemas/ShipmentListResponse'
   /logistiqo/rest/api/v-1/manifest/add:
     post:
-      summary: This API allows you to create manifests, which can export unplanned, planned, and optimized tours or bundles of shipments. 
+      summary: This API allows you to create manifests, which can export unplanned, planned, and optimized tours or bundles of shipments.
       operationId: postManifest
       description: >
+        
+        # Manifest
+        
+        
+        
+         This API provides a comprehensive set of functionalities to export unplanned, planned, and optimized tours or bundles of shipments, regardless of whether they are transported by your own vehicles or contractors.
+        
+         While importing shipments may be your primary objective, it is crucial to bundle them within a manifest. To prevent the creation of manifests, simply set the 'createManifest' field to false. It is also important to use a unique reference for each manifest to ensure data integrity within the system.
+        
+         Moreover, this API empowers you to effortlessly create Master and House Air Waybills (MAWB and HAWB). You can leverage the manifest fields for the MAWB and the shipment fields for the HAWB. By designating the manifest as a MAWB, you establish a seamless link between the shipment and the MAWB. Similarly, including a HAWB within the shipment establishes a clear connection between the shipment and the HAWB. In the event that either the MAWB or the HAWB does not exist, this API will automatically generate both to maintain consistency.
+        
+         With these powerful capabilities, this API simplifies and enhances the management of shipments, manifests, and Air Waybills, ensuring efficient and accurate logistics operations.
       
-         # Manifest
-
-
-
-          This API provides a comprehensive set of functionalities to export unplanned, planned, and optimized tours or bundles of shipments, regardless of whether they are transported by your own vehicles or contractors.
-
-          While importing shipments may be your primary objective, it is crucial to bundle them within a manifest. To prevent the creation of manifests, simply set the 'createManifest' field to false. It is also important to use a unique reference for each manifest to ensure data integrity within the system.
-          
-          Moreover, this API empowers you to effortlessly create Master and House Air Waybills (MAWB and HAWB). You can leverage the manifest fields for the MAWB and the shipment fields for the HAWB. By designating the manifest as a MAWB, you establish a seamless link between the shipment and the MAWB. Similarly, including a HAWB within the shipment establishes a clear connection between the shipment and the HAWB. In the event that either the MAWB or the HAWB does not exist, this API will automatically generate both to maintain consistency.
-          
-          With these powerful capabilities, this API simplifies and enhances the management of shipments, manifests, and Air Waybills, ensuring efficient and accurate logistics operations.
-       
-     
-          
+      
+      
       tags:
         - Manifest
       requestBody:
@@ -149,9 +149,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponseStatus'
         '200':
-          description: The manifest was created succesfully 
+          description: The manifest was created succesfully
         '208':
-          description: The manifest already exists 
+          description: The manifest already exists
         '400':
           description: Bad request
         '401':
@@ -165,9 +165,9 @@ paths:
       summary: This API enables you to retrieve a Logistiqo manifest for seamless integration into your own system.
       operationId: getManifest
       description: >
-      
-         # Manifest
-          
+        
+        # Manifest
+
       tags:
         - Manifest
       parameters:
@@ -189,15 +189,15 @@ paths:
           description: Not Found
   /logistiqo/rest/api/v-1/shipment/get/{id}:
     get:
-      summary: This API allows you to retrieve a shipment by its unique ID. 
+      summary: This API allows you to retrieve a shipment by its unique ID.
       operationId: getShipment
       description: >
+        
+        # Shipment
       
-         # Shipment
-
-     
-          
-          
+      
+      
+      
       tags:
         - Shipment
       parameters:
@@ -224,23 +224,23 @@ paths:
           description: Not Found
   /logistiqo/rest/api/v-1/status/add:
     post:
-       summary: This API allows you to add a status. You need to provide a valid JSON request body with the status information.
-       operationId: postStatus
-       description: >
+      summary: This API allows you to add a status. You need to provide a valid JSON request body with the status information.
+      operationId: postStatus
+      description: >
         
-     
-         # Status
-
-         
-       tags:
+        
+        # Status
+      
+      
+      tags:
         - Status
-       requestBody:
+      requestBody:
         required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/Status'
-       responses:
+      responses:
         '200':
           description: The status successfully added
         '400':
@@ -253,161 +253,161 @@ paths:
           description: Unprocessable Content
         '500':
           description: Internal server error
-        'default': 
+        'default':
           description: The response includes a response status object containing a 'Message' and a 'Status' wherever applicable
   /logistiqo/rest/api/v-1/company/add:
-   post:
-       summary: This API allows you to add companies. You need to provide a valid JSON request body with the company information.
-       operationId: postCompany
-       description: >
-         
-         # Company
-         
-     
-          
-       tags:
+    post:
+      summary: This API allows you to add companies. You need to provide a valid JSON request body with the company information.
+      operationId: postCompany
+      description: >
+        
+        # Company
+      
+      
+      
+      tags:
         - Company
-       requestBody:
+      requestBody:
         required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/CompanyObject'
-       responses:
+      responses:
         '200':
           description: Successfully added Company.
         '400':
           description: Invalid input.
   /logistiqo/rest/api/v-1/company/get:
-   get:
+    get:
       summary: Retrieve an array of Logistiqo companies by accessing this endpoint. The server will respond with an array of JSON objects that represent the respective companies.
       operationId: getCompanies
       description: >
-         
-       # Company
-         
-     
-          
+        
+        # Company
+      
+      
+      
       tags:
         - Company
       responses:
         '200':
           description: Logistiqo CompanyObject
-          content: 
+          content:
             application/json:
               schema:
                 type: array
-                items: 
+                items:
                   $ref: '#/components/schemas/CompanyObject'
   /logistiqo/rest/api/v-1/scanIn:
     post:
-       summary: This API allows you to add barcode scans for the warehouse. You need to provide a valid JSON request body with the barcode information.
-       operationId: postWarehouse
-       description: >
-       
-           # Warehouse
-  
-       
-            
-       tags:
+      summary: This API allows you to add barcode scans for the warehouse. You need to provide a valid JSON request body with the barcode information.
+      operationId: postWarehouse
+      description: >
+        
+        # Warehouse
+      
+      
+      
+      tags:
         - Warehouse
-       requestBody:
+      requestBody:
         required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/Barcode'
-       responses:
+      responses:
         '200':
           description: Successfully added barcode.
         '400':
           description: Invalid input.
   /logistiqo/rest/api/v-1/invoice:
     get:
-        summary: From this endpoint, you can retrieve a list of invoices. The endpoint allows you to filter invoices based on different criteria such as month, year, date, or invoice number.
-        operationId: getInvoice
-        description: > 
+      summary: From this endpoint, you can retrieve a list of invoices. The endpoint allows you to filter invoices based on different criteria such as month, year, date, or invoice number.
+      operationId: getInvoice
+      description: >
         
-            #Invoice
-            
-            
-            
-        tags:
-         - Invoice
-        parameters:
-          - name: month
-            in: query
-            description: >-
-              select invoices by month 
-            required: false
-            schema:
-              type: string
-              default: ''
-          - name: year
-            in: query
-            description: >-
-              select invoices by year 
-            required: false
-            schema:
-              type: string
-              default: ''
-          - name: date
-            in: query
-            description: >-
-              select invoices by date
-            required: false
-            schema:
-              type: string
-              default: ''
-          - name: number
-            in: query
-            description: >-
-              select invoices by number
-            required: false
-            schema:
-              type: string
-              default: ''
-          
-        responses:
-          '200':
-            description: List of Invoices
-            content:
-              application/json:
-                schema:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/Invoice'
+        #Invoice
+      
+      
+      
+      tags:
+        - Invoice
+      parameters:
+        - name: month
+          in: query
+          description: >-
+            select invoices by month
+          required: false
+          schema:
+            type: string
+            default: ''
+        - name: year
+          in: query
+          description: >-
+            select invoices by year
+          required: false
+          schema:
+            type: string
+            default: ''
+        - name: date
+          in: query
+          description: >-
+            select invoices by date
+          required: false
+          schema:
+            type: string
+            default: ''
+        - name: number
+          in: query
+          description: >-
+            select invoices by number
+          required: false
+          schema:
+            type: string
+            default: ''
+
+      responses:
+        '200':
+          description: List of Invoices
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Invoice'
   /logistiqo/rest/api/v-1/contract:
     get:
-        summary: Retrieve a Logistiqo contract from this endpoint. The response will be an array of JSON objects representing the contracts.
-        operationId: getContract
-        description: >
+      summary: Retrieve a Logistiqo contract from this endpoint. The response will be an array of JSON objects representing the contracts.
+      operationId: getContract
+      description: >
         
-            #Contract
-            
-            
-        
-        tags:
-          - Contract
-        parameters: 
-          - name: status
-            in: query
-            description: >-
-              select contracts by status active, inactive, all 
-            required: true
-            schema:
-              type: string
-              default: 'active'
-        responses:
-          '200':
-            description: Logistiqo Contract
-            content: 
-              application/json:
-                schema:
-                  type: array
-                  items: 
-                    $ref: '#/components/schemas/Contract'
-                    
+        #Contract
+      
+      
+      
+      tags:
+        - Contract
+      parameters:
+        - name: status
+          in: query
+          description: >-
+            select contracts by status active, inactive, all
+          required: true
+          schema:
+            type: string
+            default: 'active'
+      responses:
+        '200':
+          description: Logistiqo Contract
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Contract'
+
 components:
   schemas:
     ShipmentListResponse:
@@ -421,8 +421,8 @@ components:
           type: integer
           nullable: true
         shipmentnummer:
-            type: string
-            nullable: true
+          type: string
+          nullable: true
         customerreference:
           type: string
           nullable: true
@@ -550,115 +550,115 @@ components:
     AddressObject:
       type: object
       properties:
-          id:
-            type: integer
-            example: 
-          number:
-            type: string
-            description: >-
-              If you have the address number available in Logistiqo, please enter it in this field. In that case, no other address fields are required. However, if the address number not known or the address is new, please make sure to fill out all the other necessary address fields
-          idAddress: 
-            type: integer
-            default: 0
-            description: >-
-              This field contains the ID of the address within the Logistiqo Application. It is exclusively utilized by Logistiqo's internal functions.
-          city:
-            type: string
-            example: London
-          countryCode:
-            type: string
-            example: GB
-            description: >-
-              Please enter the two-letter country code according to the ISO 3166-1 alpha-2 standard. These codes are internationally recognized and defined by the International Organization for Standardization as part of the ISO 3166 standard.
-          country:
-            type: string
-            example: UNITED KINGDOM
-            description: >-
-              Please input the country name in English using capital letters.
-          email:
-            type: string
-            example: r.sterling@universalexport.net
-          greeting:
-            type: string
-            example: Mr.
-          title:
-            type: string
-            example: Dr.
-          firstName:
-            type: string
-            example: Robert
-          houseNo:
-            type: string
-            example: '413'
-          lastName:
-            type: string
-            example: Sterling
-          name:
-            type: string
-            example: Universal Exports
-          name2:
-            type: string
-            example: Limited
-          phone:
-            type: string
-            example: +44 207 946 0139
-          mobile:
-            type: string
-            example: +44 207 946 0139
-          street:
-            type: string
-            example: 413 Longstream Road
-          addressrow:
-            type: string
-            example: 'Unit 1D, Lock 71'
-          zipcode:
-            type: string
-            example: 'SE1 7TP'
-          state:
-            type: string
-            example: Bayern
-          plantNumber:
-            type: string
-            description: Internal field
-          instructions:
-            type: string
-          openingHoursMonToThuFrom:
-            type: integer
-            description: >-
-              open as of in minutes from start of day on monday to thursday
-          openingHoursMonToThuTo:
-            type: integer
-            description: >-
-              close as of in minutes from start of day on monday to thursday
-          openingHoursFriFrom:
-            type: integer
-            description: >-
-              open as of in minutes from start of day on friday
-          openingHoursFriTo:
-            type: integer
-            description: >-
-              close as of in minutes from start of day on friday
-          idTimeslot:
-            type: integer
-            description: Internal field
-          withDurationGrid:
-            type: boolean
-            default: false
-            description: Internal field
-          idDuration:
-            type: integer
-            description: Internal field
-          temporary:
-            type: boolean
-            default: false
-            example: false
+        id:
+          type: integer
+          example:
+        number:
+          type: string
+          description: >-
+            If you have the address number available in Logistiqo, please enter it in this field. In that case, no other address fields are required. However, if the address number not known or the address is new, please make sure to fill out all the other necessary address fields
+        idAddress:
+          type: integer
+          default: 0
+          description: >-
+            This field contains the ID of the address within the Logistiqo Application. It is exclusively utilized by Logistiqo's internal functions.
+        city:
+          type: string
+          example: London
+        countryCode:
+          type: string
+          example: GB
+          description: >-
+            Please enter the two-letter country code according to the ISO 3166-1 alpha-2 standard. These codes are internationally recognized and defined by the International Organization for Standardization as part of the ISO 3166 standard.
+        country:
+          type: string
+          example: UNITED KINGDOM
+          description: >-
+            Please input the country name in English using capital letters.
+        email:
+          type: string
+          example: r.sterling@universalexport.net
+        greeting:
+          type: string
+          example: Mr.
+        title:
+          type: string
+          example: Dr.
+        firstName:
+          type: string
+          example: Robert
+        houseNo:
+          type: string
+          example: '413'
+        lastName:
+          type: string
+          example: Sterling
+        name:
+          type: string
+          example: Universal Exports
+        name2:
+          type: string
+          example: Limited
+        phone:
+          type: string
+          example: +44 207 946 0139
+        mobile:
+          type: string
+          example: +44 207 946 0139
+        street:
+          type: string
+          example: 413 Longstream Road
+        addressrow:
+          type: string
+          example: 'Unit 1D, Lock 71'
+        zipcode:
+          type: string
+          example: 'SE1 7TP'
+        state:
+          type: string
+          example: Bayern
+        plantNumber:
+          type: string
+          description: Internal field
+        instructions:
+          type: string
+        openingHoursMonToThuFrom:
+          type: integer
+          description: >-
+            open as of in minutes from start of day on monday to thursday
+        openingHoursMonToThuTo:
+          type: integer
+          description: >-
+            close as of in minutes from start of day on monday to thursday
+        openingHoursFriFrom:
+          type: integer
+          description: >-
+            open as of in minutes from start of day on friday
+        openingHoursFriTo:
+          type: integer
+          description: >-
+            close as of in minutes from start of day on friday
+        idTimeslot:
+          type: integer
+          description: Internal field
+        withDurationGrid:
+          type: boolean
+          default: false
+          description: Internal field
+        idDuration:
+          type: integer
+          description: Internal field
+        temporary:
+          type: boolean
+          default: false
+          example: false
 
     CompanyObject:
       type: object
       properties:
         id:
           type: integer
-          example: 
+          example:
         number:
           type: integer
           example: 102
@@ -686,7 +686,7 @@ components:
         iban:
           type: string
           example: null
-        bic: 
+        bic:
           type: string
           example: null
         paymentMethod:
@@ -695,8 +695,8 @@ components:
         address:
           type: object
           allOf:
-          -   $ref: '#/components/schemas/AddressObject'
-          
+            - $ref: '#/components/schemas/AddressObject'
+
     PaymentTerms:
       type: object
       properties:
@@ -706,7 +706,7 @@ components:
           type: integer
         longName:
           type: string
-        shortName: 
+        shortName:
           type: string
         cashDiscount:
           type: number
@@ -728,11 +728,11 @@ components:
           type: boolean
           default: false
           description: >-
-           If this field is set to true, the API will exclude and remove shipments that exist in the corresponding Logistiqo manifest but are not included here, ensuring synchronization and making the Logistiqo manifest equal to the current one. When this field is set to false, you can conveniently add individual shipments to an existing manifest that already includes shipments.
+            If this field is set to true, the API will exclude and remove shipments that exist in the corresponding Logistiqo manifest but are not included here, ensuring synchronization and making the Logistiqo manifest equal to the current one. When this field is set to false, you can conveniently add individual shipments to an existing manifest that already includes shipments.
         manifestNumber:
           type: string
           description: >-
-           This field, which holds the unique manifest number, is only significant when exporting manifests; it holds no relevance when importing manifests.         
+            This field, which holds the unique manifest number, is only significant when exporting manifests; it holds no relevance when importing manifests.
         reference:
           type: string
           example: aliwhefn405lkj47hbsjgabjbkgxd213
@@ -776,12 +776,12 @@ components:
           type: string
           example: LSE
           description: >-
-           Indicate the container mode for ULD (Unit Load Device) Buildup. Valid entries include LSE (Loose), ULD, BCH (Buyers consolidation), and OTH (Other).
+            Indicate the container mode for ULD (Unit Load Device) Buildup. Valid entries include LSE (Loose), ULD, BCH (Buyers consolidation), and OTH (Other).
         deadline:
           type: string
           example: 12.06.2023 12:00
           description: >-
-           Please specify the deadline date and time for delivering this manifest (MAWB) to the airport in the format dd.MM.yyyy HH:mm.
+            Please specify the deadline date and time for delivering this manifest (MAWB) to the airport in the format dd.MM.yyyy HH:mm.
         date:
           type: string
           example: 12.06.2023 12:00
@@ -841,12 +841,12 @@ components:
           type: string
           example: 'Bigfoot Express'
           description: >-
-             If the manifest pertains to a trucking operation and you find that you don't require all the details of the subcontractor, such as the address, contact information, and company details, you can simply utilize this field to input the subcontractor's name. Alternatively, you can opt to generate all the necessary information related to the subcontractor as outlined in the "subcontractor" field.
+            If the manifest pertains to a trucking operation and you find that you don't require all the details of the subcontractor, such as the address, contact information, and company details, you can simply utilize this field to input the subcontractor's name. Alternatively, you can opt to generate all the necessary information related to the subcontractor as outlined in the "subcontractor" field.
         subcontractorVehicleInfo:
           type: string
           example: 'RO IQ 123'
           description: >-
-             If the manifest pertains to a trucking operation and you find that you don't require all the details of the vehicle, you can simply utilize this field to input the vehicles license plate. Alternatively, you can opt to generate all the necessary information related to the vehicle as outlined in the "vehicle" field.
+            If the manifest pertains to a trucking operation and you find that you don't require all the details of the vehicle, you can simply utilize this field to input the vehicles license plate. Alternatively, you can opt to generate all the necessary information related to the vehicle as outlined in the "vehicle" field.
         groundHandler:
           type: object
           allOf:
@@ -855,14 +855,22 @@ components:
           type: object
           allOf:
             - $ref: '#/components/schemas/AddressObject'
-        consignee :
+        consignee:
           type: object
           allOf:
             - $ref: '#/components/schemas/AddressObject'
-        unitLoadDevices :
+        unitLoadDevices:
           type: array
           items:
             $ref: '#/components/schemas/UnitLoadDevice'
+        airWaybill:
+          type: object
+          allOf:
+            - $ref: '#/components/schemas/AirWaybill'
+        billOfLading:
+          type: object
+          allOf:
+            - $ref: '#/components/schemas/BillOfLading'
         error:
           type: boolean
           example: false
@@ -880,13 +888,13 @@ components:
       type: object
       properties:
         itemNo:
-           type: string
+          type: string
         reference:
-           type: string
+          type: string
         expectedPiececount:
-           type: integer
+          type: integer
         expectedArrivalDate:
-           type: string
+          type: string
     Shipment:
       type: object
       properties:
@@ -1021,9 +1029,9 @@ components:
           type: integer
           description: Internal field
         idContract:
-           type: integer
-           default: 0
-           description: Internal field
+          type: integer
+          default: 0
+          description: Internal field
         idStockStatus:
           type: integer
           default: 0
@@ -1042,27 +1050,27 @@ components:
             $ref: '#/components/schemas/Detail'
         goodss:
           type: array
-          default: []
+          default: [ ]
           items:
             $ref: '#/components/schemas/Goods'
         notifiedGoodss:
           type: array
-          default: []
+          default: [ ]
           items:
             $ref: '#/components/schemas/NotifiedGoods'
         calloffs:
           type: array
-          default: []
+          default: [ ]
           items:
             $ref: '#/components/schemas/Calloff'
         uploadedFiles:
           type: array
-          default: []
+          default: [ ]
           items:
             $ref: '#/components/schemas/UploadedFile'
         services:
           type: array
-          default: []
+          default: [ ]
           items:
             $ref: '#/components/schemas/Service'
         statusnodes:
@@ -1081,7 +1089,7 @@ components:
           type: string
           example: SENDER
           description: >-
-           Every shipment necessitates a minimum of two detail objects: one designated as the SENDER and the other as the RECEIVER. Nevertheless, if required, it is also possible to include multiple Senders and/or multiple Receivers within a single shipment. The Sender is also utilized for pickups, while the Receiver is utilized for deliveries. 
+            Every shipment necessitates a minimum of two detail objects: one designated as the SENDER and the other as the RECEIVER. Nevertheless, if required, it is also possible to include multiple Senders and/or multiple Receivers within a single shipment. The Sender is also utilized for pickups, while the Receiver is utilized for deliveries.
         instructions:
           type: string
         address:
@@ -1128,7 +1136,7 @@ components:
           type: integer
           example: '61664'
           description: :>-
-            Only if the id of the shipment is known 
+            Only if the id of the shipment is known
         shipmentNumber:
           type: string
           example: '23 00050'
@@ -1171,14 +1179,14 @@ components:
           type: string
         createdOn:
           type: string
-          description: >- 
+          description: >-
             date in the format dd.MM.yyyy HH:mm
           example: 12.06.2023 15:00
         modifiedBy:
           type: string
         modifiedOn:
           type: string
-          description: >- 
+          description: >-
             date in the format dd.MM.yyyy HH:mm
           example: 12.06.2023 15:00
         deleted:
@@ -1324,7 +1332,7 @@ components:
         ldm:
           type: number
           format: double
-          example: 5.2 
+          example: 5.2
         length:
           type: integer
           example: 80
@@ -1354,8 +1362,8 @@ components:
           type: integer
           default: 0
         smallLoadCarriers:
-           type: integer
-           default: 0
+          type: integer
+          default: 0
         temperatureRange:
           type: string
           description: >-
@@ -1371,16 +1379,16 @@ components:
           type: integer
           default: 0
           example: 1
-          enum: [0, 1, 2]
+          enum: [ 0, 1, 2 ]
           description: |
             The `temperatureType` field in Logistiqo will automatically be adjusted based on the following conditions:
             - 0: If `setpoint` is false and either `maxTemp` equals `minTemp`, or maxTemp is null, or `minTemp` is null, then `temperatureType` will be set to 0 (None).
             - 1: If `setpoint` is false and `maxTemp` is greater than `minTemp`, then `temperatureType` will be set to 1 (From-To).
             - 2: If `setpoint` is true, then `temperatureType` will be set to 2 (setpoint).
-        maxTemp:  
+        maxTemp:
           type: number
           format: double
-        minTemp:  
+        minTemp:
           type: number
           format: double
         dangerousGoods:
@@ -1409,20 +1417,24 @@ components:
           description: >-
             This field indicates that the described goods must be monitored with a shockwatch device.
         addPieces:
-           type: integer
-           default: 0
-           description: >-
+          type: integer
+          default: 0
+          description: >-
             Internal field
         receiptId:
-           type: integer
-           default: 0
-           description: >-
+          type: integer
+          default: 0
+          description: >-
             Internal field
         packlineId:
-           type: string
-           default: ""
-           description: >-
+          type: string
+          default: ""
+          description: >-
             The importId is only required if you intend to change goods items through the API. It is used to find the correct goods item. If no item is found, a new item will be created.
+        shipmentContainer:
+          type: object
+          allOf:
+            - $ref: '#/components/schemas/ShipmentContainer'
         importId:
           type: string
           example: '12345678'
@@ -1444,6 +1456,276 @@ components:
           type: string
           description: >-
             Provide a reference of the goods.
+    AirWaybill:
+      type: object
+      properties:
+        masterAirWaybill:
+          type: string
+          example: 020-12345675
+          description: >-
+            The Air Waybill (AWB) number is a unique 11-digit identifier for air cargo shipments. It consists of:
+              First 3 digits: Airline code.
+              Next 7 digits: Unique shipment number.
+              Last digit: Check digit for validation.
+        houseAirWaybill:
+          type: string
+          description: >-
+            A unique identifier for individual shipments within a consolidated air freight. Format varies by freight forwarder.
+        airWaybillDate:
+          type: string
+          description: >-
+            The date the air waybill was issued.
+        shipper:
+          type: string
+          description: >-
+            The party responsible for dispatching the shipment. This field includes the name, address, and contact details, with line breaks represented by \n.
+        consignee:
+          type: string
+          description: >-
+            The party receiving the shipment. This field includes the name, address, and contact details, with line breaks represented by \n.
+        issuingCarriersAgent:
+          type: string
+          description: >-
+            The name of the agent authorized by the carrier to issue the air waybill.
+        agentsIataCode:
+          type: string
+          description: >-
+            The unique IATA-assigned code identifying the issuing carrier's agent. This field contains a single alphanumeric code without line breaks.
+        notifyParty:
+          type: string
+          description: >-
+            The party to be notified upon the shipment's arrival. This field includes the name, address, and contact details, with line breaks represented by \n.
+        containerMode:
+          type: string
+          description: >-
+            The identifier for the container mode used in the shipment.
+        chargeCode:
+          type: string
+          description: >-
+            The identifier for the charge code associated with the shipment.
+        referenceNumber:
+          type: string
+          description: >-
+            A unique reference number for the shipment.
+        airportDeparture:
+          type: string
+          description: >-
+            The IATA code of the airport where the shipment departs.
+        airportDestination:
+          type: string
+          description: >-
+            The IATA code of the airport where the shipment is delivered.
+        firstAirlineCarrier:
+          type: string
+          description: >-
+            The IATA code of the first airline carrier responsible for the shipment.
+        flight:
+          type: string
+          description: >-
+            The flight number assigned to the shipment.
+        flightDate:
+          type: string
+          description: >-
+            The scheduled date of the flight.
+        declaredValueForCarriage:
+          type: string
+          description: >-
+            The declared value of the goods for carriage purposes.
+        declaredValueForCustoms:
+          type: string
+          description: >-
+            The declared value of the goods for customs purposes.
+        insuranceAmount:
+          type: string
+          description: >-
+            The insured amount of the shipment.
+        accountingInformation:
+          type: string
+          description: >-
+            Additional accounting information related to the shipment.
+        handlingInformation:
+          type: string
+          description: >-
+            Special handling instructions for the shipment.
+    BillOfLading:
+      type: object
+      properties:
+        billOfLadingNumber:
+          type: string
+          description: >-
+            The unique identifier for the Bill of Lading document associated with the shipment.
+        masterBillOfLadingNumber:
+          type: string
+          description: >-
+            The unique identifier for the master Bill of Lading.
+        notifyParty:
+          type: string
+          description: >-
+            The party to be notified upon the shipment's arrival.
+        vessel:
+          type: string
+          description: >-
+            The name of the vessel transporting the shipment.
+
+        portOfLoading:
+          type: string
+          description: >-
+            The code of the port where the goods are loaded onto the vessel.
+
+        portOfLoadingName:
+          type: string
+          description: >-
+            The name of the port where the goods are loaded onto the vessel.
+
+        portOfDischarge:
+          type: string
+          description: >-
+            The code of the port where the goods are unloaded from the vessel.
+
+        portOfDischargeName:
+          type: string
+          description: >-
+            The name of the port where the goods are unloaded from the vessel.
+
+        placeOfReceipt:
+          type: string
+          description: >-
+            The code of the location where the carrier receives the goods.
+
+        placeOfReceiptName:
+          type: string
+          description: >-
+            The name of the location where the carrier receives the goods.
+
+        placeOfDelivery:
+          type: string
+          description: >-
+            The code of the location where the goods are delivered.
+
+        placeOfDeliveryName:
+          type: string
+          description: >-
+            The name of the location where the goods are delivered.
+
+        typeOfMove:
+          type: string
+          description: >-
+            The type of movement for the shipment, e.g., door-to-door.
+
+        freightPayableAt:
+          type: string
+          description: >-
+            The location where freight charges are payable.
+
+        billOfLadingCount:
+          type: string
+          description: >-
+            The total count of Bills of Lading issued for the shipment.
+
+        notifyParty1:
+          type: string
+          description: >-
+            Details of the letter of credit for the first notify party.
+
+        notifyParty2:
+          type: string
+          description: >-
+            Details of the letter of credit for the second notify party.
+
+        shipper:
+          type: string
+          description: >-
+            Details of the letter of credit provided by the shipper.
+
+        consignee:
+          type: string
+          description: >-
+            Details of the letter of credit provided by the consignee.
+
+        agentLetterOfCredit:
+          type: string
+          description: >-
+            Details of the letter of credit provided by the issuing agent.
+
+        carrier:
+          type: string
+          description: >-
+            Details of the letter of credit provided by the carrier.
+
+        mrn:
+          type: string
+          description: >-
+            The Movement Reference Number (MRN) for customs tracking.
+
+        mrnStorage:
+          type: string
+          description: >-
+            Details about the storage of the Movement Reference Number (MRN).
+
+        prePaperType:
+          type: string
+          description: >-
+            The type of pre-paper document associated with the shipment.
+
+        containerized:
+          type: string
+          description: >-
+            Indicates whether the shipment is containerized.
+
+        surrendered:
+          type: string
+          description: >-
+            Indicates if the Bill of Lading has been surrendered.
+
+        prepaid:
+          type: string
+          description: >-
+            Indicates whether the shipment charges are prepaid.
+
+        letterOfCredit:
+          type: string
+          description: >-
+            Details of the letter of credit associated with the shipment.
+
+        estimatedTimeOfDeparture:
+          type: string
+          description: >-
+            The estimated time when the shipment departs.
+
+        estimatedTimeOfArrival:
+          type: string
+          description: >-
+            The estimated time when the shipment arrives.
+
+        dateOfIssue:
+          type: string
+          description: >-
+            The date when the Bill of Lading or shipment document was issued.
+
+        placeOfIssue:
+          type: string
+          description: >-
+            The location where the Bill of Lading or shipment document was issued.
+    ShipmentContainer:
+      type: object
+      properties:
+        containerNumber:
+          type: string
+          description: >-
+            The unique identifier for the container, typically alphanumeric.
+          example: ABCD1234567
+        sealNumber:
+          type: string
+          description: >-
+            The seal number used to secure the container, provided by the carrier or customs.
+          example: SEAL78910
+
+        containerType:
+          type: string
+          description: >-
+            The type of container based on ISO standards (e.g., 20GP, 40HC).
+          example: 20GP
+
     Service:
       type: object
       properties:
@@ -1857,7 +2139,6 @@ components:
                 example: "23 00567"
                 description: :>-
                     The packlineId functions as a distinctive identifier for delineating particular sets of goods or items consolidated on a single Unit Load Device (ULD).
-          
     InvoiceShipment:
       type: object
       properties:
@@ -1949,6 +2230,6 @@ components:
       type: http
       scheme: basic
 security:
-  - BasicAuth: []
-  - ApiKeyAuth: []
+  - BasicAuth: [ ]
+  - ApiKeyAuth: [ ]
 
