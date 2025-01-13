@@ -1511,10 +1511,10 @@ components:
           type: string
           description: >-
             The IATA code of the airport where the shipment departs.
-        airportDestination:
-          type: string
-          description: >-
-            The IATA code of the airport where the shipment is delivered.
+        segments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Segment'
         firstAirlineCarrier:
           type: string
           description: >-
@@ -1725,6 +1725,28 @@ components:
           description: >-
             The type of container based on ISO standards (e.g., 20GP, 40HC).
           example: 20GP
+    Segment:
+      type: object
+      properties:
+        code:
+          type: string
+          description: >-
+            The code representing the airport in UNLOCO format, typically i (e.g., DEFRA, USJFK).
+
+        name:
+          type: string
+          description: >-
+            The name of the airport.
+
+        carrierCode:
+          type: string
+          description: >-
+            The code representing the airline, typically in IATA format (e.g., LH for Lufthansa).
+
+        carrierName:
+          type: string
+          description: >-
+            The name of the airline.
 
     Service:
       type: object
