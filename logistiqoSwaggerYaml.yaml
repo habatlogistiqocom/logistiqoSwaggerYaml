@@ -1570,7 +1570,7 @@ components:
         portOfLoading:
           type: string
           description: >-
-            The code of the port where the goods are loaded onto the vessel.
+            The UN/LOCODE of the port where the goods are loaded onto the vessel.
 
         portOfLoadingName:
           type: string
@@ -1580,7 +1580,7 @@ components:
         portOfDischarge:
           type: string
           description: >-
-            The code of the port where the goods are unloaded from the vessel.
+            The UN/LOCODE of the port where the goods are unloaded from the vessel.
 
         portOfDischargeName:
           type: string
@@ -1590,7 +1590,7 @@ components:
         placeOfReceipt:
           type: string
           description: >-
-            The code of the location where the carrier receives the goods.
+            The UN/LOCODE of the location where the carrier receives the goods.
 
         placeOfReceiptName:
           type: string
@@ -1600,7 +1600,7 @@ components:
         placeOfDelivery:
           type: string
           description: >-
-            The code of the location where the goods are delivered.
+            The UN/LOCODE of the location where the goods are delivered.
 
         placeOfDeliveryName:
           type: string
@@ -1731,7 +1731,7 @@ components:
         code:
           type: string
           description: >-
-            The code representing the airport in UNLOCO format, typically i (e.g., DEFRA, USJFK).
+            The code representing the airport in UN/LOCODE format, typically i (e.g., DEFRA, USJFK).
 
         name:
           type: string
