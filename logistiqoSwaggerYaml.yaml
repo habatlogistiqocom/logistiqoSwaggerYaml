@@ -1048,6 +1048,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Detail'
+        shipmentContainers:
+          type: array
+          default: [ ]
+          items:
+            $ref: '#/components/schemas/ShipmentContainer'
         goodss:
           type: array
           default: [ ]
@@ -1431,10 +1436,11 @@ components:
           default: ""
           description: >-
             The importId is only required if you intend to change goods items through the API. It is used to find the correct goods item. If no item is found, a new item will be created.
-        shipmentContainer:
-          type: object
-          allOf:
-            - $ref: '#/components/schemas/ShipmentContainer'
+        containerNumber:
+          type: string
+          example: ABCD1234567
+          description: >-
+            The unique identifier for the container, typically alphanumeric.
         importId:
           type: string
           example: '12345678'
@@ -1725,6 +1731,11 @@ components:
           description: >-
             The type of container based on ISO standards (e.g., 20GP, 40HC).
           example: 20GP
+        goodss:
+          type: array
+          default: [ ]
+          items:
+            $ref: '#/components/schemas/Goods'
     Segment:
       type: object
       properties:
