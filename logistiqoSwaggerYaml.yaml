@@ -1576,11 +1576,6 @@ components:
           description: >-
             The party to be notified upon the shipment's arrival.
 
-        feederVessel:
-          type: string
-          description: >-
-            The feeder vessel transporting goods to the main shipping vessel. 
-
         portOfLoading:
           type: string
           description: >-
@@ -1661,7 +1656,7 @@ components:
           description: >-
             Details of the letter of credit provided by the issuing agent.
 
-        carrier:
+        carrierInfo:
           type: object
           description: >-
             The carrier responsible for transporting the goods. This includes details such as 
@@ -1669,7 +1664,7 @@ components:
           allOf:
             - $ref: '#/components/schemas/Carrier'
 
-        carrierFeederVessel:
+        carrierInfoFeeder:
           type: object
           description: >-
             The feeder vessel carrier responsible for transporting goods to the main shipping vessel. 
