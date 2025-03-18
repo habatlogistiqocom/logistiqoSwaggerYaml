@@ -1043,11 +1043,6 @@ components:
           type: integer
           default: 0
           description: Internal field
-        additionalreferences:
-          type: array
-          default: [ ]
-          items:
-            $ref: '#/components/schemas/AdditionalReference'
         customer:
           type: object
           allOf:
@@ -1489,6 +1484,11 @@ components:
           type: string
           description: >-
             A unique identifier for individual shipments within a consolidated air freight. Format varies by freight forwarder.
+        additionalReferences:
+          type: array
+          default: [ ]
+          items:
+            $ref: '#/components/schemas/AdditionalReference'
         airWaybillDate:
           type: string
           description: >-
@@ -1576,6 +1576,11 @@ components:
           type: string
           description: >-
             The unique identifier for the master Bill of Lading.
+        additionalReferences:
+          type: array
+          default: [ ]
+          items:
+            $ref: '#/components/schemas/AdditionalReference'
         notifyParty:
           type: string
           description: >-
