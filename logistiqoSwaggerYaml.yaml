@@ -1043,6 +1043,11 @@ components:
           type: integer
           default: 0
           description: Internal field
+        additionalreferences:
+          type: array
+          default: [ ]
+          items:
+            $ref: '#/components/schemas/AdditionalReference'
         customer:
           type: object
           allOf:
@@ -1811,8 +1816,18 @@ components:
           description: >-
             The name of the vessel transporting the shipment, as assigned by the carrier.
           example: MSC Aurora
-
-
+    AdditionalReference:
+      type: object
+      properties:
+        pos:
+          type: integer
+          example: 1
+          description: >-
+            Position of the reference in trhge list
+        name:
+          type: string
+          description: >-
+            The additionbal reference
     Service:
       type: object
       properties:
