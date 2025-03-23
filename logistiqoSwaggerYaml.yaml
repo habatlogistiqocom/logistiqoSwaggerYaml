@@ -857,7 +857,7 @@ components:
         driver:
           type: object
           allOf:
-            - $ref: '#/components/schemas/Person'
+            - $ref: '#/components/schemas/PersonObject'
           description: >-
             In this section, you have the capability to input comprehensive information regarding the driver which has been assigned to the specific manifest.
         action:
@@ -1097,6 +1097,12 @@ components:
           type: integer
           default: 0
           description: Internal field
+        mawb:
+          type: string
+          example: 020 12345675 
+          description: >-
+              The Master Air Waybill (MAWB) number associated with this shipment. 
+              Indicates that the shipment is part of a consolidated air freight under the specified MAWB.
         customer:
           type: object
           allOf:
