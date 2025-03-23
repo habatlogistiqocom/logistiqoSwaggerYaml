@@ -2077,6 +2077,11 @@ components:
           example: true
           description: :>-
             Indicates an error if true.
+        manifestId:
+          type: integer
+          example: 654141
+          description: :>-
+            This contains the manifest id of the updated or created manifest.
         message:
           type: string
           example: 'The Manifest 1234567 was created successfully'
