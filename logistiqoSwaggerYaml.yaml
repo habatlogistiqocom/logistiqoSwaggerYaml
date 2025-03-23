@@ -696,6 +696,29 @@ components:
           type: object
           allOf:
             - $ref: '#/components/schemas/AddressObject'
+    PersonObject:
+      type: object
+      properties:
+        id:
+          type: integer
+          example:
+        number:
+          type: integer
+          example: 102
+          description: >-
+            If you have the uniqueue person number available in Logistiqo, please enter it in this field. In that case, no other company or address fields are required. However, if the company number not known or the company is new, please make sure to fill out all the other necessary company and address fields
+        personType:
+          type: string
+          example: DRIVER
+          description: >-
+            DRIVER, EMPLOYEE, CONTACT
+        code:
+          type: string
+          example: 01728971456
+        address:
+          type: object
+          allOf:
+            - $ref: '#/components/schemas/AddressObject'
 
     PaymentTerms:
       type: object
@@ -831,6 +854,12 @@ components:
             - $ref: '#/components/schemas/Vehicle'
           description: >-
             In this section, you have the capability to input comprehensive information regarding the vehicle which has been assigned to the specific manifest.
+        driver:
+          type: object
+          allOf:
+            - $ref: '#/components/schemas/Person'
+          description: >-
+            In this section, you have the capability to input comprehensive information regarding the driver which has been assigned to the specific manifest.
         action:
           type: string
           example: ''
