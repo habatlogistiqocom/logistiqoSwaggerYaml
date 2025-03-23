@@ -804,6 +804,10 @@ components:
           default: PO
           description: >-
             Internal field do not use
+        template:
+          type: boolean
+          description: >-
+            Indicates that the shipment is a template and will not be used live
         customerNumber:
           type: string
           example: 10002
@@ -967,6 +971,27 @@ components:
           type: string
           description: >-
             free text
+        depot:
+          type: string
+          description: >-
+            Corresponding the depot in Logistiqo
+        deliveryType:
+          type: string
+          example: Einzeltransport
+          description: >-
+            Corresponding the deliveryType in Logistiqo
+        template:
+          type: boolean
+          description: >-
+            Indicates that the shipment is a template and will not be used live
+        accompanyingPerson:
+          type: integer
+          description: >-
+            Only used by passenger transport
+        anniversaryOn:
+          type: string
+          description: >-
+            Only used by passenger transport
         description:
           type: string
           description: >-
