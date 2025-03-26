@@ -970,6 +970,11 @@ components:
         internalReference:
           type: string
           example: ''
+        mrn:
+          type: string
+          example: 24DE9876543210001
+          description: >-
+            The Movement Reference Number (MRN) is a unique identifier assigned to a customs declaration or shipment, particularly in international transport and customs clearance processes. It is used across systems like EMCS (Excise Movement and Control System) and AIS (Automated Import System) in Europe.
         hawb:
           type: string
           description: >-
